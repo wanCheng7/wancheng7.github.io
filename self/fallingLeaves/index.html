@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>falling leaves</title>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="botAgregar">
+	
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$.AutomLeafStart({
+			leafsfolder:"images/",
+			howmanyimgsare:8,
+			initialleafs:10
+			,maxYposition:-10,
+			multiplyclick:true,
+			multiplynumber:2,
+			infinite:true,
+			fallingsequence:4000
+		});
+		$("#botAgregar").on("click",function(){
+			$.AutomLeafAdd({
+				leafsfolder:"images/",add:8
+			})
+		})
+	</script>
+</body>
+</html>
+
+
+
