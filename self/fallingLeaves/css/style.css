@@ -1,0 +1,31 @@
+.AutomLeaf {
+	position:fixed;
+	opacity:0;
+	z-index:0
+}
+.AutomLeaffalling {
+	position:fixed;
+	top:0;
+	left:0;
+	opacity:0;
+	z-index:0
+}
+.inFront {
+	z-index:100
+}
+.x1 {
+	width:75px;
+	height:75px
+}
+.x2 {
+	width:100px;
+	height:100px
+}
+.x3 {
+	width:125px;
+	height:125px
+}
+.x4 {
+	width:150px;
+	height:150px
+}
