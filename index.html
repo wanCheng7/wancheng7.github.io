@@ -363,11 +363,6 @@
       
         
           <h4 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h4><p>之前，偶尔在项目中用过history接口做返回上一页功能，当时是用的history.go(-1)，前几天面试中遇到一个控制浏览器跳转的问题时有点懵，特意查了文档记录一下，并且列出一些目前能想到的应用：</p>
-<h4 id="popstate事件"><a href="#popstate事件" class="headerlink" title="popstate事件"></a>popstate事件</h4><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Events/popstate" target="_blank" rel="noopener">文档地址</a></p>
-<blockquote>
-<p>当活动历史记录条目更改时，将触发popstate事件。如果被激活的历史记录条目是通过对history.pushState（）的调用创建的，或者受到对history.replaceState（）的调用的影响，popstate事件的state属性包含历史条目的状态对象的副本。</p>
-</blockquote>
-<p>就我目前的认识来看，无论是浏览器的前进还是后退都会触发这个popstate事件，所以只能起到一个监听页面变化的作用。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/10/利用popstate事件和window下的history对象处理浏览器跳转问题/#more" rel="contents">
