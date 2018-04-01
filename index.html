@@ -362,8 +362,7 @@
 
       
         
-          
-            <h4 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h4><h5 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h5><table>
+          <h4 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h4><h5 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h5><table>
 <thead>
 <tr>
 <th>常用元字符</th>
@@ -387,129 +386,15 @@
 <td>\d</td>
 <td>匹配数字，相当于[0-9]</td>
 </tr>
-<tr>
-<td>\D</td>
-<td>匹配不是数字的字符</td>
-</tr>
-<tr>
-<td>\s</td>
-<td>匹配任意不可见字符，包括空格、制表符、换行符等</td>
-</tr>
-<tr>
-<td>\S</td>
-<td>匹配任意可见字符</td>
-</tr>
-<tr>
-<td>^</td>
-<td>匹配字符串的开始位置</td>
-</tr>
-<tr>
-<td>$</td>
-<td>匹配字符串的结束位置</td>
-</tr>
 </tbody>
 </table>
-<h5 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h5><table>
-<thead>
-<tr>
-<th>量词</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>*</td>
-<td>重复任意次，相当于{0,}</td>
-</tr>
-<tr>
-<td>?</td>
-<td>重复0次或1次，相当于{0，1}</td>
-</tr>
-<tr>
-<td>+</td>
-<td>重复1次或更多次，相当于{1，}</td>
-</tr>
-<tr>
-<td>{n}</td>
-<td>重复n次</td>
-</tr>
-<tr>
-<td>{n,}</td>
-<td>重复n次或者大于n次</td>
-</tr>
-<tr>
-<td>{n,m}</td>
-<td>重复n到m次</td>
-</tr>
-</tbody>
-</table>
-<h5 id="分支-amp-字符集"><a href="#分支-amp-字符集" class="headerlink" title="分支&amp;字符集"></a>分支&amp;字符集</h5><p>简单理解就是对某个字符界定的一个选择范围</p>
-<ol>
-<li>(a|b|c)</li>
-<li>[abc] === [a-c]</li>
-<li>[^abc] === [^a-c]</li>
-</ol>
-<h5 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h5><p>使用\转义，我的理解是凡是不是表达它原本含义的字符就要转义，例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/\d/ 表示的是匹配纯数字</span><br><span class="line">/\\\d/ 表示的是匹配&apos;\d&apos;这个字符串</span><br><span class="line">/\d/.test(&apos;2&apos;)   //true</span><br><span class="line">/\\\d/.test(&apos;2&apos;)  // false</span><br><span class="line">/\\d/.test(&apos;\\d&apos;)   //true</span><br></pre></td></tr></table></figure></p>
-<p>当然，这还只是针对以\开头的那些元字符，还有那些量词当表示普通字符串时也要转义的，大体有这些：</p>
-<blockquote>
-<ul>
-<li>. ? + $ ^ [ ] ( ) { } | \ /</li>
-</ul>
-</blockquote>
-<h5 id="常用修饰符"><a href="#常用修饰符" class="headerlink" title="常用修饰符"></a>常用修饰符</h5><ol>
-<li>g → 全局搜索(global)  </li>
-<li>i → 不区分大小写(ignoreCase)</li>
-<li>m → 多行搜索(multiline)</li>
-<li>y → 执行“粘性”搜索,匹配从目标字符串的当前位置开始，可以使用y标志。(sticky)</li>
-</ol>
-<h4 id="使用正则表达式"><a href="#使用正则表达式" class="headerlink" title="使用正则表达式"></a>使用正则表达式</h4><p>正则表达式可以被用于RegExp的exec和test方法以及 String的match、replace、search和split方法</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>exec</td>
-<td>一个在字符串中执行查找匹配的RegExp方法，它返回一个数组（未匹配到则返回null）。</td>
-</tr>
-<tr>
-<td>test</td>
-<td>一个在字符串中测试是否匹配的RegExp方法，它返回true或false。</td>
-</tr>
-<tr>
-<td>match</td>
-<td>一个在字符串中执行查找匹配的String方法，它返回一个数组或者在未匹配到时返回null。</td>
-</tr>
-<tr>
-<td>search</td>
-<td>一个在字符串中测试匹配的String方法，它返回匹配到的位置索引，或者在失败时返回-1。</td>
-</tr>
-<tr>
-<td>replace</td>
-<td>一个在字符串中执行查找匹配的String方法，并且使用替换字符串替换掉匹配到的子字符串。</td>
-</tr>
-<tr>
-<td>split</td>
-<td>一个使用正则表达式或者一个固定字符串分隔一个字符串，并将分隔后的子字符串存储到数组中的String方法。</td>
-</tr>
-</tbody>
-</table>
-<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>既然前面讲了这么多基本规则，那就试着手写两个日常业务中常见的正则吧</p>
-<ul>
-<li><p>验证手机号</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">最简单的验证：</span><br><span class="line">/^1[0-9]&#123;10&#125;$/.test(&apos;18688888888&apos;)  //true</span><br><span class="line">这只是对开始的一位数和后面的10位数做了简单验证，如果需求有别的还可以根据位数做更精细的限制</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>验证邮箱</p>
-</li>
-</ul>
-<p>邮箱验证正则是个老生常谈的问题了，有很多前端笔试题也喜欢出，之前没有细化了解正则规则之前觉得这题目挺变态的，但现在觉得能够徒手写个简单的邮箱验证出来才能至少证明你了解基本的正则，话不多少，上代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">首先看一个正确的邮箱地址：525918717@qq.com</span><br><span class="line">这里可以差分为&apos;525918717&apos;、&apos;@&apos;、&apos;qq&apos;、&apos;.&apos;、&apos;com&apos;这么几部分，那么对应这几部分的内容初略匹配一下正则就是：</span><br><span class="line">/^\w+@(\w+)\.([a-z]+)$/i.test(&apos;525918717@qq.com&apos;)  //true</span><br></pre></td></tr></table></figure></p>
-<p>当然，这只是我自己手写的一个基础版，还有更精简的版本，例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/[^\s@]+@[^\s@]+\.[^\s@]+/.test(&apos;525918717@qq.com&apos;)   //true</span><br></pre></td></tr></table></figure></p>
-<p>经过对正则一些基础语法的了解，我对正则的理解就是想达到同一个匹配效果可以有多重方式，当然还有一些更高级的用法，像零宽断言和分组引用这些，下次用一篇文章单独讲解吧！</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/01/JS种正则表达式的基础用法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
