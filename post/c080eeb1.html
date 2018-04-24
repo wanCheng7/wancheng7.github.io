@@ -99,24 +99,25 @@
 
 
 
-  <meta name="description" content="关于我 你好，我是一个学心理学的前端攻城狮。不想当将军的的司机不是一个好程序猿，我就是那个想当将军的程序猿，哈哈！   这是我的个人博客，以前我总是习惯于把一些经验和想法写在本地，后来查资料的过程中发现博客园的资料蛮多的，为了收藏方便，我就开始在博客园上慢慢开始写起了博客。之前，我拿着githubpage做了一个简单的个人主页，我想着就是用来展示一下自己而已，后来发现用来做静态博客也不错啊，可以各">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://wancheng7.github.io/about/index.html">
+  <meta name="description" content="一、引子最近在看别人的博客时无意中看到一个这样的问题1234567var a = &amp;#123;n: 1&amp;#125;;var b = a;a.x = a = &amp;#123;n:2&amp;#125;;console.log(a.x);  //undefinedconsole.log(a);  // &amp;#123;n: 2&amp;#125; console.log(b);  // &amp;#123;n: 1, x: &amp;#12">
+<meta name="keywords" content="原理探究">
+<meta property="og:type" content="article">
+<meta property="og:title" content="探究JS中的连等赋值问题">
+<meta property="og:url" content="http://wancheng7.github.io/post/c080eeb1.html">
 <meta property="og:site_name" content="万成">
-<meta property="og:description" content="关于我 你好，我是一个学心理学的前端攻城狮。不想当将军的的司机不是一个好程序猿，我就是那个想当将军的程序猿，哈哈！   这是我的个人博客，以前我总是习惯于把一些经验和想法写在本地，后来查资料的过程中发现博客园的资料蛮多的，为了收藏方便，我就开始在博客园上慢慢开始写起了博客。之前，我拿着githubpage做了一个简单的个人主页，我想着就是用来展示一下自己而已，后来发现用来做静态博客也不错啊，可以各">
+<meta property="og:description" content="一、引子最近在看别人的博客时无意中看到一个这样的问题1234567var a = &amp;#123;n: 1&amp;#125;;var b = a;a.x = a = &amp;#123;n:2&amp;#125;;console.log(a.x);  //undefinedconsole.log(a);  // &amp;#123;n: 2&amp;#125; console.log(b);  // &amp;#123;n: 1, x: &amp;#12">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-05T15:17:51.861Z">
+<meta property="og:updated_time" content="2018-04-24T16:09:41.397Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="关于我 你好，我是一个学心理学的前端攻城狮。不想当将军的的司机不是一个好程序猿，我就是那个想当将军的程序猿，哈哈！   这是我的个人博客，以前我总是习惯于把一些经验和想法写在本地，后来查资料的过程中发现博客园的资料蛮多的，为了收藏方便，我就开始在博客园上慢慢开始写起了博客。之前，我拿着githubpage做了一个简单的个人主页，我想着就是用来展示一下自己而已，后来发现用来做静态博客也不错啊，可以各">
+<meta name="twitter:title" content="探究JS中的连等赋值问题">
+<meta name="twitter:description" content="一、引子最近在看别人的博客时无意中看到一个这样的问题1234567var a = &amp;#123;n: 1&amp;#125;;var b = a;a.x = a = &amp;#123;n:2&amp;#125;;console.log(a.x);  //undefinedconsole.log(a);  // &amp;#123;n: 2&amp;#125; console.log(b);  // &amp;#123;n: 1, x: &amp;#12">
 
 
 
 
 
 
-  <link rel="canonical" href="http://wancheng7.github.io/about/"/>
+  <link rel="canonical" href="http://wancheng7.github.io/post/c080eeb1.html"/>
 
 
 
@@ -126,7 +127,7 @@
   };
 </script>
 
-  <title>about | 万成</title>
+  <title>探究JS中的连等赋值问题 | 万成</title>
   
 
 
@@ -322,58 +323,208 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wancheng7.github.io/post/c080eeb1.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="万成">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="万成">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">about</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><blockquote>
-<p>你好，我是一个学心理学的前端攻城狮。不想当将军的的司机不是一个好程序猿，我就是那个想当将军的程序猿，哈哈！</p>
-</blockquote>
-<blockquote>
-<p>这是我的个人博客，以前我总是习惯于把一些经验和想法写在本地，后来查资料的过程中发现博客园的资料蛮多的，为了收藏方便，我就开始在<a href="http://www.cnblogs.com/wancheng7/" target="_blank" rel="noopener">博客园</a>上慢慢开始写起了博客。之前，我拿着githubpage做了一个简单的<a href="https://wancheng7.github.io/self/">个人主页</a>，我想着就是用来展示一下自己而已，后来发现用来做静态博客也不错啊，可以各种折腾，哈哈，以后写博客就在这里写了，评论功能暂时没有开通，等弄好之后欢迎大家多多留言讨论！</p>
-</blockquote>
-<blockquote>
-<p>我目前住在杭州，正在一线从事前端开发，希望自己有朝一日也能成为一个全栈的大牛！</p>
-</blockquote>
-<h3 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h3><ul>
-<li>QQ: 525918717</li>
-<li>微信：18670007412</li>
-<li>邮箱: <a href="mailto:525918717@qq.com" target="_blank" rel="noopener">525918717@qq.com</a></li>
-<li>Github：<a href="https://github.com/wancheng7" target="_blank" rel="noopener">https://github.com/wancheng7</a></li>
+          <h1 class="post-title" itemprop="name headline">探究JS中的连等赋值问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-14T23:55:19+08:00">2018-04-14</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/post/c080eeb1.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论：</span> <span class="post-comments-count gitment-comments-count" data-xid="/post/c080eeb1.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="一、引子"><a href="#一、引子" class="headerlink" title="一、引子"></a>一、引子</h4><p>最近在看别人的博客时无意中看到一个这样的问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;n: 1&#125;;</span><br><span class="line">var b = a;</span><br><span class="line">a.x = a = &#123;n:2&#125;;</span><br><span class="line"></span><br><span class="line">console.log(a.x);  //undefined</span><br><span class="line">console.log(a);  // &#123;n: 2&#125; </span><br><span class="line">console.log(b);  // &#123;n: 1, x: &#123;n: 2&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>这是一个典型的连等赋值问题，是不是发现打印的结果跟自己预料的不太一样，就算一样你能具体讲出内部的执行机制吗？</p>
+<h4 id="二、直观理解"><a href="#二、直观理解" class="headerlink" title="二、直观理解"></a>二、直观理解</h4><p>咋一看这个表达式，我会本能地把它拆解为这样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=&#123;n:2&#125;;</span><br><span class="line">a.x=&#123;n:2&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>所以根据这个理解得出的打印结果是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(a.x);  //&#123;n: 2&#125;</span><br></pre></td></tr></table></figure></p>
+<p>显然结果是不对的，那问题出在了哪里呢？要想从原理上解释这个问题，还得首先理解以下几个知识点</p>
+<h4 id="三、需要理解的知识点"><a href="#三、需要理解的知识点" class="headerlink" title="三、需要理解的知识点"></a>三、需要理解的知识点</h4><ul>
+<li>内存的的运行机制</li>
+<li>JS引擎的解析过程，从左往右</li>
+<li>连等赋值的执行方向，从右往左</li>
+</ul>
+<p>放在这个例子中对应的理解就是：</p>
+<ul>
+<li>a、b这些变量名存储的只是一串指向具体对象的指针，这些指针占用的空间是非常小的，而{n: 1}这些对象才是实实在在存在内存中的值</li>
+<li>JS引擎在执行到a.x = a = {n:2}这句时，并不是直接的从右往左的执行过程。而是计算机会先从左往右解析各个变量名，转换成变量值（计算机只会记变量值，人的话记变量名）。再从右往左执行赋值。</li>
+<li><p>也就是在这个表达式中第一个a和第二个a指向的都是{n: 1};</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.x = a = &#123;n:2&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解析完成后，从右往左执行赋值,第二个等号赋值时，a重定向到了{n: 2},第一个等号赋值时，实际上是{n:1}.x={n, 2};<br>而这个时候指向{a:1, x:{n:2}}这个值的只有b了</p>
+</li>
+<li>所以a.x的值就变为了undefined，因为a已经重定向赋值为{n:2}了，而b就指向了复合之后的对象</li>
+</ul>
+<h4 id="四、理解中的误区及思考"><a href="#四、理解中的误区及思考" class="headerlink" title="四、理解中的误区及思考"></a>四、理解中的误区及思考</h4><p>我最开始查了连等赋值的相关文章时，对于以上这些原理的理解是没什么问题的，关键是在理解最后那个赋值过程时，我有过一种理解<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;n:2&#125;;</span><br><span class="line">a.x=&#123;n:2&#125;;</span><br><span class="line">// 所以此时a= &#123;n:2, x:&#123;n:2&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>产生这种理解的原因是觉得对a的赋值有个先后顺序，但事实上好像是不存在的。我对上面那种从解析赋值角度去理解的核心就是在连等赋值执行过程中，总共分为两步，一步是变量名解析，一步是赋值，然后根据赋值之后的值去看相应的变量名与变量之间的对应关系。</p>
+<h4 id="五、参考文档"><a href="#五、参考文档" class="headerlink" title="五、参考文档"></a>五、参考文档</h4><ul>
+<li><a href="http://annhuang.cn/2018/03/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JS%E7%9A%84%E8%BF%9E%E7%AD%89%E8%B5%8B%E5%80%BC/" target="_blank" rel="noopener">深入理解JS的连等赋值伸</a></li>
+<li><a href="http://justjavac.com/javascript/2012/04/05/javascript-continuous-assignment-operator.html" target="_blank" rel="noopener">写了 10 年 Javascript 未必全了解的连续赋值运算</a></li>
+<li><a href="https://segmentfault.com/a/1190000004224719" target="_blank" rel="noopener">由ES规范学JavaScript(二)：深入理解“连等赋值”问题</a></li>
 </ul>
 
-        
-      </div>
-      
-      
       
     </div>
+
     
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/原理探究/" rel="tag"># 原理探究</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/4da1c743.html" rel="next" title="JS中将对象转化为数组">
+                <i class="fa fa-chevron-left"></i> JS中将对象转化为数组
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/post/41ca68e.html" rel="prev" title="JS正则表达式的分组匹配">
+                JS正则表达式的分组匹配 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
 
-    
-    
-    
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -521,7 +672,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于我"><span class="nav-number">1.</span> <span class="nav-text">关于我</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#联系我"><span class="nav-number">2.</span> <span class="nav-text">联系我</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、引子"><span class="nav-number">1.</span> <span class="nav-text">一、引子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、直观理解"><span class="nav-number">2.</span> <span class="nav-text">二、直观理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、需要理解的知识点"><span class="nav-number">3.</span> <span class="nav-text">三、需要理解的知识点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、理解中的误区及思考"><span class="nav-number">4.</span> <span class="nav-text">四、理解中的误区及思考</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、参考文档"><span class="nav-number">5.</span> <span class="nav-text">五、参考文档</span></a></li></ol></div>
             
 
           </div>
