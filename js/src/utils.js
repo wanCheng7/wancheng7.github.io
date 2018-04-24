@@ -13,9 +13,9 @@ NexT.utils = NexT.$u = {
         var imageTitle = $image.attr('title');
         var $imageWrapLink = $image.parent('a');
 
-        if ($imageWrapLink.size() < 1) {
+        if ($imageWrapLink.length < 1) {
 	        var imageLink = ($image.attr('data-original')) ? this.getAttribute('data-original') : this.getAttribute('src');
-          $imageWrapLink = $image.wrap('<a href="' + imageLink + '"></a>').parent('a');
+          $imageWrapLink = $image.wrap('<a data-fancybox="group" href="' + imageLink + '"></a>').parent('a');
         }
 
         $imageWrapLink.addClass('fancybox fancybox.image');
@@ -195,13 +195,25 @@ NexT.utils = NexT.$u = {
   },
 
   /**
-   * Add `menu-item-active` class name to menu item
+   * Add `menu-item-active` class name to menu item(s)
    * via comparing location.path with menu item's href.
    */
   addActiveClassToMenuItem: function () {
     var path = window.location.pathname;
-    path = path === '/' ? path : path.substring(0, path.length - 1);
-    $('.menu-item a[href^="' + path + '"]:first').parent().addClass('menu-item-active');
+
+    if (path !== '/') {
+      var path = path.split('/');
+      var partPath = '';
+      for (var i = 0; i < path.length; i++) {
+        if (path[i] !== '') {
+          partPath += '/' + path[i];
+          $('.menu-item a[href^="' + partPath + '"]:first').parent().addClass('menu-item-active');
+        }
+      }
+    } else {
+      //path = path === '/' ? path : path.substring(0, path.length - 1);
+      $('.menu-item a[href^="' + path + '"]:first').parent().addClass('menu-item-active');
+    }
   },
 
   hasMobileUA: function () {

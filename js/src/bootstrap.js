@@ -4,9 +4,12 @@ $(document).ready(function () {
 
   $(document).trigger('bootstrap:before');
 
-  NexT.utils.isMobile() && window.FastClick.attach(document.body);
-
-  NexT.utils.lazyLoadPostsImages();
+    /**
+   * Register JS handlers by condition option.
+   * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
+   */
+  CONFIG.fastclick && NexT.utils.isMobile() && window.FastClick.attach(document.body);
+  CONFIG.lazyload && NexT.utils.lazyLoadPostsImages();
 
   NexT.utils.registerESCKeyEvent();
 
