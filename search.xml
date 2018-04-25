@@ -80,7 +80,7 @@
   <entry>
     <title><![CDATA[Hexo 折腾记录]]></title>
     <url>%2Fpost%2F5f818014.html</url>
-    <content type="text"><![CDATA[部署遇到的坑 部署时遇到这个报错：’bash: /dev/tty: No such device or address’…后面还一大堆，这个在第一次上传到github仓库时时没出现过的，这次修改之后出现了，网上查了之后说是配置问题，具体哦如下： 123456_config.yml文件中，找到Deployment： deploy: type: git repo: https://github.com/yourname/yourname.github.io.git branch: master 其中 repo的地址修改为git@github.com:yourname/yourname.github.io.git 经过修改之后就可以了 参考网站：https://www.zhihu.com/question/38219432 hexo next主题集成gitment评论系统主要草考文章：https://blog.csdn.net/yanzi1225627/article/details/77890414 hexo链接持久化由于hexo默认的链接形式是年月日加上文章名，而我们是中国人在文章命名时一般是中文的这样就会造成文章链接中有中文，这样会带来一些问题，像上面的giment就要求链接中不能有中文，还有链接长了不利于SEO，当然我目前没有这个需要，但还是参考大神的文章将链接成短的持久化的链接了：参考文章：hexo链接持久化终极解决之道 增加搜索功能参考文章：hexo 搜索功能 其他优化和折腾参考链接 hexo 摸爬滚打之进阶教程]]></content>
+    <content type="text"><![CDATA[部署遇到的坑 部署时遇到这个报错：’bash: /dev/tty: No such device or address’…后面还一大堆，这个在第一次上传到github仓库时时没出现过的，这次修改之后出现了，网上查了之后说是配置问题，具体哦如下： 123456_config.yml文件中，找到Deployment： deploy: type: git repo: https://github.com/yourname/yourname.github.io.git branch: master 其中 repo的地址修改为git@github.com:yourname/yourname.github.io.git 经过修改之后就可以了 参考网站：https://www.zhihu.com/question/38219432 hexo next主题集成gitment评论系统主要草考文章：https://blog.csdn.net/yanzi1225627/article/details/77890414 hexo链接持久化由于hexo默认的链接形式是年月日加上文章名，而我们是中国人在文章命名时一般是中文的这样就会造成文章链接中有中文，这样会带来一些问题，像上面的giment就要求链接中不能有中文，还有链接长了不利于SEO，当然我目前没有这个需要，但还是参考大神的文章将链接成短的持久化的链接了：参考文章：hexo链接持久化终极解决之道 增加搜索功能参考文章：hexo 搜索功能 其他优化和折腾参考链接 hexo 摸爬滚打之进阶教程 hexo的next主题个性化配置教程]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
