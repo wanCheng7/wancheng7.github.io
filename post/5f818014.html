@@ -99,18 +99,18 @@
 
 
 
-  <meta name="description" content="部署时遇到这个报错：’bash: /dev/tty: No such device or address’…后面还一大堆，这个在第一次上传到github仓库时时没出现过的，这次修改之后出现了，网上查了之后说是配置问题，具体哦如下：">
+  <meta name="description" content="部署遇到的坑 部署时遇到这个报错：’bash: /dev/tty: No such device or address’…后面还一大堆，这个在第一次上传到github仓库时时没出现过的，这次修改之后出现了，网上查了之后说是配置问题，具体哦如下：">
 <meta name="keywords" content="填坑记录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo部署时遇到的坑">
+<meta property="og:title" content="Hexo 折腾记录">
 <meta property="og:url" content="http://wancheng7.github.io/post/5f818014.html">
 <meta property="og:site_name" content="万成">
-<meta property="og:description" content="部署时遇到这个报错：’bash: /dev/tty: No such device or address’…后面还一大堆，这个在第一次上传到github仓库时时没出现过的，这次修改之后出现了，网上查了之后说是配置问题，具体哦如下：">
+<meta property="og:description" content="部署遇到的坑 部署时遇到这个报错：’bash: /dev/tty: No such device or address’…后面还一大堆，这个在第一次上传到github仓库时时没出现过的，这次修改之后出现了，网上查了之后说是配置问题，具体哦如下：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-24T16:09:41.389Z">
+<meta property="og:updated_time" content="2018-04-25T13:35:22.473Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo部署时遇到的坑">
-<meta name="twitter:description" content="部署时遇到这个报错：’bash: /dev/tty: No such device or address’…后面还一大堆，这个在第一次上传到github仓库时时没出现过的，这次修改之后出现了，网上查了之后说是配置问题，具体哦如下：">
+<meta name="twitter:title" content="Hexo 折腾记录">
+<meta name="twitter:description" content="部署遇到的坑 部署时遇到这个报错：’bash: /dev/tty: No such device or address’…后面还一大堆，这个在第一次上传到github仓库时时没出现过的，这次修改之后出现了，网上查了之后说是配置问题，具体哦如下：">
 
 
 
@@ -127,7 +127,7 @@
   };
 </script>
 
-  <title>Hexo部署时遇到的坑 | 万成</title>
+  <title>Hexo 折腾记录 | 万成</title>
   
 
 
@@ -354,7 +354,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo部署时遇到的坑</h1>
+          <h1 class="post-title" itemprop="name headline">Hexo 折腾记录</h1>
         
 
         <div class="post-meta">
@@ -431,10 +431,15 @@
       
 
       
-        <h5 id="部署时遇到这个报错：’bash-dev-tty-No-such-device-or-address’…后面还一大堆，这个在第一次上传到github仓库时时没出现过的，这次修改之后出现了，网上查了之后说是配置问题，具体哦如下："><a href="#部署时遇到这个报错：’bash-dev-tty-No-such-device-or-address’…后面还一大堆，这个在第一次上传到github仓库时时没出现过的，这次修改之后出现了，网上查了之后说是配置问题，具体哦如下：" class="headerlink" title="部署时遇到这个报错：’bash: /dev/tty: No such device or address’…后面还一大堆，这个在第一次上传到github仓库时时没出现过的，这次修改之后出现了，网上查了之后说是配置问题，具体哦如下："></a>部署时遇到这个报错：’bash: /dev/tty: No such device or address’…后面还一大堆，这个在第一次上传到github仓库时时没出现过的，这次修改之后出现了，网上查了之后说是配置问题，具体哦如下：</h5><a id="more"></a>
+        <h4 id="部署遇到的坑"><a href="#部署遇到的坑" class="headerlink" title="部署遇到的坑"></a>部署遇到的坑</h4><blockquote>
+<p>部署时遇到这个报错：’bash: /dev/tty: No such device or address’…后面还一大堆，这个在第一次上传到github仓库时时没出现过的，这次修改之后出现了，网上查了之后说是配置问题，具体哦如下：</p>
+</blockquote>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">_config.yml文件中，找到Deployment：</span><br><span class="line">	deploy: </span><br><span class="line">		type: git </span><br><span class="line">		repo: https://github.com/yourname/yourname.github.io.git </span><br><span class="line">		branch: master</span><br><span class="line">	其中 repo的地址修改为git@github.com:yourname/yourname.github.io.git</span><br></pre></td></tr></table></figure>
 <p>经过修改之后就可以了</p>
 <p>参考网站：<a href="https://www.zhihu.com/question/38219432" target="_blank" rel="noopener">https://www.zhihu.com/question/38219432</a></p>
+<h4 id="hexo-next主题集成gitment评论系统"><a href="#hexo-next主题集成gitment评论系统" class="headerlink" title="hexo next主题集成gitment评论系统"></a>hexo next主题集成gitment评论系统</h4><p>主要草考文章：<a href="https://blog.csdn.net/yanzi1225627/article/details/77890414" target="_blank" rel="noopener">https://blog.csdn.net/yanzi1225627/article/details/77890414</a></p>
+<h4 id="hexo链接持久化"><a href="#hexo链接持久化" class="headerlink" title="hexo链接持久化"></a>hexo链接持久化</h4><p>由于hexo默认的链接形式是年月日加上文章名，而我们是中国人在文章命名时一般是中文的这样就会造成文章链接中有中文，这样会带来一些问题，像上面的giment就要求链接中不能有中文，还有链接长了不利于SEO，当然我目前没有这个需要，但还是参考大神的文章将链接成短的持久化的链接了：<br>参考文章：<a href="http://yangq.me/post/19acb239.html" target="_blank" rel="noopener">hexo链接持久化终极解决之道</a></p>
 
       
     </div>
@@ -647,7 +652,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#部署时遇到这个报错：’bash-dev-tty-No-such-device-or-address’…后面还一大堆，这个在第一次上传到github仓库时时没出现过的，这次修改之后出现了，网上查了之后说是配置问题，具体哦如下："><span class="nav-number">1.</span> <span class="nav-text">部署时遇到这个报错：’bash: /dev/tty: No such device or address’…后面还一大堆，这个在第一次上传到github仓库时时没出现过的，这次修改之后出现了，网上查了之后说是配置问题，具体哦如下：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#部署遇到的坑"><span class="nav-number">1.</span> <span class="nav-text">部署遇到的坑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo-next主题集成gitment评论系统"><span class="nav-number">2.</span> <span class="nav-text">hexo next主题集成gitment评论系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo链接持久化"><span class="nav-number">3.</span> <span class="nav-text">hexo链接持久化</span></a></li></ol></div>
             
 
           </div>
