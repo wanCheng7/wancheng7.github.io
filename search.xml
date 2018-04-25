@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[《免费前端教程不会告诉你这些》知乎LIVE读后感]]></title>
+    <url>%2Fpost%2Ff3fa0421.html</url>
+    <content type="text"><![CDATA[这个是昨天偶然间在知乎上看到的一个知乎LIVE，答题就是音频在线直播吧，我试听了一下觉得分享的还不错，就买了完整的。主讲人叫方应杭，貌似是个挺牛逼的程序猿，之前没有听过，但这是个典型的科班出生的程序员，全栈，挺佩服他的。接下来就整一些挺的过程中整理的点吧： 作者的自我介绍 首先作者进项了一大段自我介绍，介绍了他从实习开始的工作经历。正如他所说的确实很顺啊，从实习开始就是腾讯，然后转正了去了腾讯，之后又去了阿里等公司。他大体每段工作经历都有讲到，那能从他这些工作经历的介绍中得到什么对自己有用的点呢？ 首先，作者有个习惯，就是在开始项目之前自己会根据项目情况自己造一些轮子，并且以开源框架的要求去封装，这一点给我的启示是自己也要适当地造一些轮子放在github上，看自己能不能做得跟第三方插件一样好甚至某些方面好那么一丢丢。而且这些造的轮子也便于自己日后复用以及面试时跟被人展示自己的技术沉淀。 在工作之余得有个自己的个人项目（side project） 按照作者的观点，要想工作的内容刚好是自己需要学习的知识概率是很小的，那要想学习和实践一些新技术新框架怎么办呢，就是自己在工作之余弄一个自己的项目，在这个项目上自己想用什么框架和技术都是没有限制的。 这样说 来确实挺有必要的。我之前找工作老想着新工作上用到的技术正好是自己需要学习的，可公司不是慈善机构，既然你都还需要在公司里学习，公司干嘛招你呢。所以，在公司工作的过程中能学到自己想学的知识最好，但那些还没接触过的或者最新的技术还得靠自己在工作之余去学习，这个观念得转变过来。 回答网友问题总结 学习知识的形式下过比较一般的是看书，进一步的是提炼总结，再进一步就是输出，写代码或者写文章，最好的方式是讲出来，也就是让别人听懂前端的历史 最开始是没有前端这个职位的，网页是后端程序猿写的，大都用的table布局，没什么css，比较丑 后来又了美工的加入，开始使用div+css布局，变得好看一些了 再之后随着AJAX的普及，慢慢开始专门有些后端程序猿开始专注于写复杂的JS来达到复杂的交互，这就慢慢形成了前端这个岗位 可是最开始HTML是由后端控制的，数据是由后端渲染，这样的话前端是很不爽的，而且前后端不能同时工作，后来就出现了前后端分离 前后端分离意味着前端完全控制HTML/CSS/JS，后端只负责用AJAX的形式提供数据接口，同时人员也彻底分离了，后端专门做后端的事，前端做前端的事 前后端分离也带来了一个问题，就是前端负责的这块显得没有后端那么重要，所以晋升难一些，事实上也确实是这样，不过后来移动端的兴起使得前端负责的东西多了一块，也稍微显得重要一些了 再之后就是各种随着HTML5和CSS3以及ES56的部分基础设施的完善和升级，前端框架开始向各种优秀语言抄，也就出现了现在的MVC和MVVM等框架 入门指导 书籍推荐 javascript.ruanyifeng.com es6.ruanyifeng.com 你不知道的 JavaScript CSS 揭秘 项目推荐 原生 JS 仿网易云音乐、饿了么（后端使用 leanCloud） Vue 或 React 再实现一遍 网站推荐 MDN CSS Tricks Codrops 优质的中文前端博客 （1.4k）https://github.com/FrankFang/best-chinese-front-end-blogs 学习思路推荐 仿你看到的所有东西：hao123、知乎、微信 Follow 我的 GitHub https://github.com/FrankFang/resume-15-3 https://github.com/FrankFang/nav-demo https://github.com/FrankFang/canvas-demo-2017 看完任意一本教程 给一年前端 从 60 分到 80 分，关注用户体验 模仿组件 不要重复自己 不要满足于调用 API 三年前端 关注工作效率 做份外的事情：后端、设计、产品 管理上级、拢络平级 变成重要的人 坚持写博客 模仿框架 跟人（榜样）学，而不是跟视频、书学 社区里的人 公司里的人 互联网上的人 我的收获 增长见识 首先作为一个非计算机科班的我第一次比较完整的了解了一个优秀科班生的从业经历，当然作者自己都说了，他算是比较顺风顺水型，但至少能看出学计算机专业的在编程领域真的有更多的可能性 另外一点就是关于前端这个职位的发展，毕竟我不是从有这个职位就开始做前端的，这次算是从作者口中间接了解了前端这个一个职位的发展史 学习方法 我们之所以喜欢看名人传记，就是想从他们身上找到一些我们能够学习的优秀特质。听他人的技术分享也是一样的道理。虽热作者在分享过程中几乎没有说过要我们学他怎么样的话，但从他一些细节和习惯的描述中我们可以选择性的学习一些优秀特质，例如： 在开始项目之前自己先试着造个轮子 工作之余做side project，在这种项目上学习新知识，而不是工作中 工作中尝试封装组件，并且以能够给别人使用为目标，无论有没有人用 我觉得作者身上表现的这些点一定算是他成功路上的优秀特质，我们不一定要都学会，但是可以结合自身情况来学习一下 关于前端学习之路 前端知识比较分散，数量庞杂，最终还是要多练，多记吧，这肯定是必由之路。我之前听人说过一种观点，前端就是在记各种API和熟练使用各种API，当然，这是中低层主要在做的事情，也是每一个优秀前端的基本功。至于更高层级的话，按作者的说法就是不仅仅要满足于会用现成的API了，而是要想着怎么造好用的API给别人使用，当然造这个的前提是了解原理了，所以这个阶段就是不仅要知道怎么用，还得知道为什么要这么用了，我正在朝这个方向努力，加油！ 关于作者提出的向人学习这一点我有些疑问？ 因为之前一直有种观点就是不要轻易去问人，因为没经过自己思考就去问人那样得到的答案记得确实没那么深刻。所以说关于作者提出的跟人学而不是跟视频什么的学，我的理解是多交流，当你身边坐着一位大牛的时候，你把问题和思路直接跟他说，那样能够得到及时的反馈肯定是最高效的，当然这种问题都是一些思路啊方法层面的了。 所以，我的总结就是，基础的东西一定要自己查自己记住，而一些方法啊原理层面的东西，有资源的情况下尽量找比你牛逼的人交流解决，那肯定是要高效一些的。 谈谈个人的长期目标和短期目标 从15年毕业后经过培训进入前端行业到现在真正从事前端的时间也有两年多了，前一年几乎是没有任何目标感的，也不知道自己需要什么，公司需要什么就学什么，感觉有点浑浑噩噩混着的感觉。大概也就从去年开始才开始有了不仅仅要满足于解决现有问题，还应该多去了解基础和底层原理了。 首先谈谈短期目标吧 短期目前就是在最近两年内完善自己的知识体系，成为前端小组长或者负责人。我目前理解的这个知识体系是从计算机原理到浏览器执行机制、HTTP协议、JS的最新规范以及适当的了解目前流行的前端框架及其出现的原因。这些不一定要面面俱到，但每个方面都要有涉及，不能遗漏。 长期目标 目前来说长期目标就是在前端之外探寻更多的可能性，也就是是说看在前端知识体系基本完善的情况下结合别的方面的能力。最好的话就是能够走管理或者培训吧。技术这条路是没有尽头的，每个公司需要的技术牛人毕竟是有限的，尤其是中小型公司，而每个公司都需要能够提升团队工作效率，尽快带来产出的leader，我想，我的长期目标就是成为一个这样能够推进项目发展的leader。 我的短期目标是长期目标的基础，也是我来杭州的目的，我相信只要这个短期目前完成的好的话长期目标就是积累加机遇的过程了！ 最后附上作者的知乎LIVE免费前端教程不会告诉你这些]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>读后感</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JS正则表达式的分组匹配]]></title>
+    <url>%2Fpost%2F41ca68e.html</url>
+    <content type="text"><![CDATA[什么是分组通俗来说，我理解的分组就是在正则表达式中用（）包起来的内容代表了一个分组，像这样的：12var reg = /(\d&#123;2&#125;)/reg.test(&apos;12&apos;); //true 这里reg中的(/d{2})就表示一个分组，匹配两位数字 分组内容的的形式一个分组中可以像上面这样有一个具体的表达式，这样可以优雅地表达一个重复的字符串12/hahaha//(ha)&#123;3&#125;/ 这两个表达式是等效的，但有了分组之后可以更急简洁。 体格分组中还可以有多个候选表达式，例如123var reg = /I come from (hunan|hubei|zhejiang)/;reg.test(&apos;I come from hunan&apos;); //truereg.test(&apos;I come from hubei&apos;); //true 也就是说在这个分组中，通过|隔开的几个候选表达式是并列的关系，所以可以把这个|理解为或的意思 分组的分类分组有四种类型 捕获型 () 非捕获型 (?:) 正向前瞻型 (?=) 反向前瞻型 (?!)我们使用的比较多的都是捕获型分组，只有这种分组才会暂存匹配到的串 分组的应用分组在正则中还算使用的比较广泛的，我们常用的是捕获型分组 捕获与引用 被正则表达式捕获(匹配)到的字符串会被暂存起来，其中，由分组捕获到的字符串会从1开始编号，于是我们可以引用这些字符串：123456var reg = /(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/;var dateStr = &apos;2018-04-18&apos;;reg.test(dateStr); //trueRegExp.$1 //2018RegExp.$2 //04RegExp.$3 //18 结合replace方法做字符串自定义替换 String.prototype.replace方法的传参中可以直接引用被捕获的串，比如我们想开发中常见的日期格式替换,例如后台给你返回了一个2018/04/18,让你用正则替换为2018-04-18，就可以利用分组123var dateStr = &apos;2018/04/18&apos;;var reg = /(\d&#123;4&#125;)\/(\d&#123;2&#125;)\/(\d&#123;2&#125;)/;dateStr = dateStr.replace(reg, &apos;$1-$2-$3&apos;) //&quot;2018-04-18&quot; 不过这里需要注意的是/是需要用\转义的 反向引用 正则表达式里也能进行引用，这称为反向引用： 12345var reg = /(\w&#123;3&#125;) is \1/reg.test(&apos;kid is kid&apos;) // truereg.test(&apos;dik is dik&apos;) // truereg.test(&apos;kid is dik&apos;) // falsereg.test(&apos;dik is kid&apos;) // false 需要注意的是，如果引用了越界或者不存在的编号的话，就被被解析为普通的表达式 123var reg = /(\w&#123;3&#125;) is \6/;reg.test( &apos;kid is kid&apos; ); // falsereg.test( &apos;kid is \6&apos; ); // true 非捕获型分组 有的时候只是为了分组并不需要捕获的情况下就可以使用非捕获型分组，例如12345var reg = /(?:\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/var date = &apos;2012-12-21&apos;reg.test(date)RegExp.$1 // 12RegExp.$2 // 21 正向与反向前瞻型分组 正向前瞻型分组：你站在原地往前看，如果前方是指定的东西就返回true，否则为false 123var reg = /kid is a (?=doubi)/reg.test(&apos;kid is a doubi&apos;) // truereg.test(&apos;kid is a shabi&apos;) // false 反向前瞻型分组：你站在原地往前看，如果前方不是指定的东西则返回true，如果是则返回false 123var reg = /kid is a (?!doubi)/reg.test(&apos;kid is a doubi&apos;) // falsereg.test(&apos;kid is a shabi&apos;) // true 既然前瞻型分组和非捕获型分组都不会捕获，那他们有什么区别呢？先看例子： 12345678var reg, str = &quot;kid is a doubi&quot;;reg = /(kid is a (?:doubi))/reg.test(str)RegExp.$1 // kid is a doubireg = /(kid is a (?=doubi))/reg.test(str)RegExp.$1 // kis is a 也就是说非捕获型分组匹配到的字符串任然会被外层分组匹配到，而前瞻型不会，所以如果你希望在外层分组中不匹配里面分组的值的话就可以使用前瞻型分组了。 参考文章 JavaScript正则表达式的分组匹配详解 正则表达式]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>正则</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[探究JS中的连等赋值问题]]></title>
+    <url>%2Fpost%2Fc080eeb1.html</url>
+    <content type="text"><![CDATA[一、引子最近在看别人的博客时无意中看到一个这样的问题1234567var a = &#123;n: 1&#125;;var b = a;a.x = a = &#123;n:2&#125;;console.log(a.x); //undefinedconsole.log(a); // &#123;n: 2&#125; console.log(b); // &#123;n: 1, x: &#123;n: 2&#125;&#125; 这是一个典型的连等赋值问题，是不是发现打印的结果跟自己预料的不太一样，就算一样你能具体讲出内部的执行机制吗？ 二、直观理解咋一看这个表达式，我会本能地把它拆解为这样12a=&#123;n:2&#125;;a.x=&#123;n:2&#125;; 所以根据这个理解得出的打印结果是1console.log(a.x); //&#123;n: 2&#125; 显然结果是不对的，那问题出在了哪里呢？要想从原理上解释这个问题，还得首先理解以下几个知识点 三、需要理解的知识点 内存的的运行机制 JS引擎的解析过程，从左往右 连等赋值的执行方向，从右往左 放在这个例子中对应的理解就是： a、b这些变量名存储的只是一串指向具体对象的指针，这些指针占用的空间是非常小的，而{n: 1}这些对象才是实实在在存在内存中的值 JS引擎在执行到a.x = a = {n:2}这句时，并不是直接的从右往左的执行过程。而是计算机会先从左往右解析各个变量名，转换成变量值（计算机只会记变量值，人的话记变量名）。再从右往左执行赋值。 也就是在这个表达式中第一个a和第二个a指向的都是{n: 1}; 1a.x = a = &#123;n:2&#125; 解析完成后，从右往左执行赋值,第二个等号赋值时，a重定向到了{n: 2},第一个等号赋值时，实际上是{n:1}.x={n, 2};而这个时候指向{a:1, x:{n:2}}这个值的只有b了 所以a.x的值就变为了undefined，因为a已经重定向赋值为{n:2}了，而b就指向了复合之后的对象 四、理解中的误区及思考我最开始查了连等赋值的相关文章时，对于以上这些原理的理解是没什么问题的，关键是在理解最后那个赋值过程时，我有过一种理解123a = &#123;n:2&#125;;a.x=&#123;n:2&#125;;// 所以此时a= &#123;n:2, x:&#123;n:2&#125;&#125; 产生这种理解的原因是觉得对a的赋值有个先后顺序，但事实上好像是不存在的。我对上面那种从解析赋值角度去理解的核心就是在连等赋值执行过程中，总共分为两步，一步是变量名解析，一步是赋值，然后根据赋值之后的值去看相应的变量名与变量之间的对应关系。 五、参考文档 深入理解JS的连等赋值伸 写了 10 年 Javascript 未必全了解的连续赋值运算 由ES规范学JavaScript(二)：深入理解“连等赋值”问题]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>原理探究</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JS中将对象转化为数组]]></title>
+    <url>%2Fpost%2F4da1c743.html</url>
+    <content type="text"><![CDATA[前言其实这本来应该是一个很基础的问题了，但我之做一想记录一下是因为之前因为对象转数组的时候卡住了后来弄了出来，但最近再遇到这个问题时竟然又卡主了，所以，关于这个问题，如何把一个对象{‘未完成’:5, ‘已完成’:8, ‘待确认’:4, ‘已取消’:6}转为[{“未完成”:5},{“已完成”:8},{“待确认”:4},{“已取消”:6}]，你已经知道如何操作了，那这篇文章你也就没有必要看了。 对象的两种取值方式我们都知道，JS中对象有两种取值方式，通过在.后面直接加属性名取值，这也是我们最常使用的一种方式，例如:12let obj = &#123;name: &apos;wan&apos;&#125;;console.log(obj.name); //wan 这是最普通的一种方式，还有一种方式我们用的不太多，就是使用[]包住属性名取值，类似于数组那样，例如12let obj = &#123;name: &apos;wan&apos;&#125;;console.log(obj[name]); //wan 那二者之前有什么区别呢，如果对于一个已知的对象来说，几乎是没什么区别的，但是如果我们需要的对象的key是变量呢？这就回到了我们文章开始是提到的问题，如何将一个对象转化为数组 将对象转化为数组我们文章开始例子中的对象是1let obj = &#123;&apos;未完成&apos;:5, &apos;已完成&apos;:8, &apos;待确认&apos;:4, &apos;已取消&apos;:6&#125;; 如果目标数组只是为了得到对象的key的集合或者value的集合还是相对容易的123456var arr = []for (let i in obj) &#123; arr.push(obj[i]); //属性 //arr.push(obj[i]); //值&#125;console.log(arr); 如果像我文中开始的需求的话就只需要改变一下push进去的内容为一个对象即可1234567var arr = []for (let i in obj) &#123; let o = &#123;&#125;; o[i] = obj[i]; arr.push(o)&#125;console.log(arr); 后记说到底还是思维不够灵活在解决问题时就卡克了，说实话这不是一个什么难题，但是把自己思维限制死了之后就会觉得是个难题，谨记！]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JS种正则表达式的基础用法]]></title>
+    <url>%2Fpost%2F10937cb.html</url>
+    <content type="text"><![CDATA[基础语法元字符 常用元字符 含义 . 匹配除换行符以外的任意字符 \w 匹配字母数字或下划线 \W 匹配不是字母、数字、下划线的字符 \d 匹配数字，相当于[0-9] \D 匹配不是数字的字符 \s 匹配任意不可见字符，包括空格、制表符、换行符等 \S 匹配任意可见字符 ^ 匹配字符串的开始位置 $ 匹配字符串的结束位置 量词 量词 含义 * 重复任意次，相当于{0,} ? 重复0次或1次，相当于{0，1} + 重复1次或更多次，相当于{1，} {n} 重复n次 {n,} 重复n次或者大于n次 {n,m} 重复n到m次 分支&amp;字符集简单理解就是对某个字符界定的一个选择范围 (a|b|c) [abc] === [a-c] [^abc] === [^a-c] 转义使用\转义，我的理解是凡是不是表达它原本含义的字符就要转义，例如12345/\d/ 表示的是匹配纯数字/\\\d/ 表示的是匹配&apos;\d&apos;这个字符串/\d/.test(&apos;2&apos;) //true/\\\d/.test(&apos;2&apos;) // false/\\d/.test(&apos;\\d&apos;) //true 当然，这还只是针对以\开头的那些元字符，还有那些量词当表示普通字符串时也要转义的，大体有这些： . ? + $ ^ [ ] ( ) { } | \ / 常用修饰符 g → 全局搜索(global) i → 不区分大小写(ignoreCase) m → 多行搜索(multiline) y → 执行“粘性”搜索,匹配从目标字符串的当前位置开始，可以使用y标志。(sticky) 使用正则表达式正则表达式可以被用于RegExp的exec和test方法以及 String的match、replace、search和split方法 方法 描述 exec 一个在字符串中执行查找匹配的RegExp方法，它返回一个数组（未匹配到则返回null）。 test 一个在字符串中测试是否匹配的RegExp方法，它返回true或false。 match 一个在字符串中执行查找匹配的String方法，它返回一个数组或者在未匹配到时返回null。 search 一个在字符串中测试匹配的String方法，它返回匹配到的位置索引，或者在失败时返回-1。 replace 一个在字符串中执行查找匹配的String方法，并且使用替换字符串替换掉匹配到的子字符串。 split 一个使用正则表达式或者一个固定字符串分隔一个字符串，并将分隔后的子字符串存储到数组中的String方法。 实例既然前面讲了这么多基本规则，那就试着手写两个日常业务中常见的正则吧 验证手机号 123最简单的验证：/^1[0-9]&#123;10&#125;$/.test(&apos;18688888888&apos;) //true这只是对开始的一位数和后面的10位数做了简单验证，如果需求有别的还可以根据位数做更精细的限制 验证邮箱 邮箱验证正则是个老生常谈的问题了，有很多前端笔试题也喜欢出，之前没有细化了解正则规则之前觉得这题目挺变态的，但现在觉得能够徒手写个简单的邮箱验证出来才能至少证明你了解基本的正则，话不多少，上代码：123首先看一个正确的邮箱地址：525918717@qq.com这里可以差分为&apos;525918717&apos;、&apos;@&apos;、&apos;qq&apos;、&apos;.&apos;、&apos;com&apos;这么几部分，那么对应这几部分的内容初略匹配一下正则就是：/^\w+@(\w+)\.([a-z]+)$/i.test(&apos;525918717@qq.com&apos;) //true 当然，这只是我自己手写的一个基础版，还有更精简的版本，例如1/[^\s@]+@[^\s@]+\.[^\s@]+/.test(&apos;525918717@qq.com&apos;) //true 经过对正则一些基础语法的了解，我对正则的理解就是想达到同一个匹配效果可以有多重方式，当然还有一些更高级的用法，像零宽断言和分组引用这些，下次用一篇文章单独讲解吧！]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>正则</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[利用popstate事件和window下的history对象处理浏览器跳转问题]]></title>
+    <url>%2Fpost%2Fe384a99a.html</url>
+    <content type="text"><![CDATA[引子之前，偶尔在项目中用过history接口做返回上一页功能，当时是用的history.go(-1)，前几天面试中遇到一个控制浏览器跳转的问题时有点懵，特意查了文档记录一下，并且列出一些目前能想到的应用： popstate事件文档地址 当活动历史记录条目更改时，将触发popstate事件。如果被激活的历史记录条目是通过对history.pushState（）的调用创建的，或者受到对history.replaceState（）的调用的影响，popstate事件的state属性包含历史条目的状态对象的副本。 就我目前的认识来看，无论是浏览器的前进还是后退都会触发这个popstate事件，所以只能起到一个监听页面变化的作用。 History 接口 属性 History.length 表示历史会话中元素的数目 History.scrollRestoration 允许Web应用程序在历史导航上显式地设置默认滚动恢复行为。此属性可以是自动的（auto）或者手动的（manual）。 History.state 返回一个表示历史堆栈顶部的状态的值。这是一种可以不必等待popstate 事件而查看状态而的方式。 方法 History.back() 等同于history.go(-1) History.forward() 等同于historygo(1) History.go() 这个方法中如果参数超出范围或者不对就不会起效果 History.pushState() pushState() 带有三个参数：一个状态对象，一个标题（现在被忽略了），以及一个可选的URL地址。下面将对这三个参数进行细致的检查 1234567function pushHistory() &#123; var state = &#123; title: &quot;title&quot;, url: &quot;#&quot; &#125;; window.history.pushState(state, &quot;title&quot;, &quot;#xx&quot;); &#125; 其他方法就不一一列举了，感兴趣的看文档 监听浏览器返回按钮123456789101112function pushHistory() &#123; var state = &#123; title: &quot;title&quot;, url: &quot;#&quot; &#125;; window.history.pushState(state, &quot;title&quot;, &quot;#xx&quot;); &#125;pushHistory();window.addEventListener(&quot;popstate&quot;, function(e) &#123; console.log(e); alert(&quot;我监听到了浏览器的返回按钮事件啦&quot;);//根据自己的需求实现自己的功能 &#125;, false); 这个地方就监听了浏览器的返回事件，但我有个疑问，如果不先pushState一个地址就监听不到，直接跳转了，这个暂时没搞懂，有知道的小伙伴可以留言讨论一下。 禁止返回上一页的一种方案12345history.pushState(null, null, document.URL);window.addEventListener(&quot;popstate&quot;,function(e) &#123; console.log(e); history.pushState(null, null, document.URL);&#125;, false); 这个其实就是利用pushState向浏览历史列表中插入当前页面，在点击后退前和点击时都插入一次，那样无论点前进还是后退永远都会留在这个页面了 如果大家还有什么关于利用history接口和popstate结合控制页面跳转的实际应用案例，欢迎留言讨论交流！]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>web API</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[用hexo从零开始在githubpage上搭建自己的个人博客]]></title>
+    <url>%2Fpost%2F6af8e2ee.html</url>
+    <content type="text"><![CDATA[主要参考了以下两篇文章： 使用Hexo+Github一步步搭建属于自己的博客（基础）：https://www.cnblogs.com/fengxiongZz/p/7707219.html 使用Hexo+Github一步步搭建属于自己的博客（进阶）：http://www.cnblogs.com/fengxiongZz/p/7707568.html 手把手教你用Hexo+Github搭建属于自己的博客(详细图文)：http://www.jb51.net/article/125152.htm]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>填坑记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo 折腾记录]]></title>
+    <url>%2Fpost%2F5f818014.html</url>
+    <content type="text"><![CDATA[部署遇到的坑 部署时遇到这个报错：’bash: /dev/tty: No such device or address’…后面还一大堆，这个在第一次上传到github仓库时时没出现过的，这次修改之后出现了，网上查了之后说是配置问题，具体哦如下： 123456_config.yml文件中，找到Deployment： deploy: type: git repo: https://github.com/yourname/yourname.github.io.git branch: master 其中 repo的地址修改为git@github.com:yourname/yourname.github.io.git 经过修改之后就可以了 参考网站：https://www.zhihu.com/question/38219432 hexo next主题集成gitment评论系统主要草考文章：https://blog.csdn.net/yanzi1225627/article/details/77890414 hexo链接持久化由于hexo默认的链接形式是年月日加上文章名，而我们是中国人在文章命名时一般是中文的这样就会造成文章链接中有中文，这样会带来一些问题，像上面的giment就要求链接中不能有中文，还有链接长了不利于SEO，当然我目前没有这个需要，但还是参考大神的文章将链接成短的持久化的链接了：参考文章：hexo链接持久化终极解决之道 增加搜索功能参考文章：hexo 搜索功能 其他优化和折腾参考链接 hexo 摸爬滚打之进阶教程]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>填坑记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo常用操作命令]]></title>
+    <url>%2Fpost%2Fb0551089.html</url>
+    <content type="text"><![CDATA[新建一篇文章，如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。1$ hexo new [layout] &lt;title&gt; 生成静态文件1$ hexo g 启动服务器1$ hexo server 启动服务器，使用新端口1$ hexo server -p 部署网站1$ hexo d 生成静态文件并部署网站1$ hexo d -g]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>常用命令行</tag>
+      </tags>
+  </entry>
+</search>
