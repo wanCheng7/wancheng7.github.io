@@ -116,20 +116,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="万成">
-<meta property="og:url" content="http://wancheng7.github.io/archives/index.html">
+  <meta name="description" content="关于vue-router由于最近的项目中一直在使用vue，所以前端路由方案也是使用的官方路由vue-router，之前在angularJS项目中也是用过UI-router，感觉大同小异，不过很显然vue-router更友好一些。本文就以vue-router为例浅析我所理解的前端路由，具体用法和一些基本语法就不一一介绍了，官方文档说的更加清晰">
+<meta name="keywords" content="vue,vue-router">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅析使用vue-router实现前端路由的两种方式">
+<meta property="og:url" content="http://wancheng7.github.io/post/2f3d2375.html">
 <meta property="og:site_name" content="万成">
+<meta property="og:description" content="关于vue-router由于最近的项目中一直在使用vue，所以前端路由方案也是使用的官方路由vue-router，之前在angularJS项目中也是用过UI-router，感觉大同小异，不过很显然vue-router更友好一些。本文就以vue-router为例浅析我所理解的前端路由，具体用法和一些基本语法就不一一介绍了，官方文档说的更加清晰">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-14T14:15:14.221Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="万成">
+<meta name="twitter:title" content="浅析使用vue-router实现前端路由的两种方式">
+<meta name="twitter:description" content="关于vue-router由于最近的项目中一直在使用vue，所以前端路由方案也是使用的官方路由vue-router，之前在angularJS项目中也是用过UI-router，感觉大同小异，不过很显然vue-router更友好一些。本文就以vue-router为例浅析我所理解的前端路由，具体用法和一些基本语法就不一一介绍了，官方文档说的更加清晰">
 
 
 
 
 
 
-  <link rel="canonical" href="http://wancheng7.github.io/archives/"/>
+  <link rel="canonical" href="http://wancheng7.github.io/post/2f3d2375.html"/>
 
 
 
@@ -139,7 +144,7 @@
   };
 </script>
 
-  <title>归档 | 万成</title>
+  <title>浅析使用vue-router实现前端路由的两种方式 | 万成</title>
   
 
 
@@ -186,7 +191,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <a href="https://github.com/wancheng7"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
@@ -342,417 +347,252 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wancheng7.github.io/post/2f3d2375.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="万成">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="万成">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">浅析使用vue-router实现前端路由的两种方式</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-14T22:13:10+08:00">2018-05-14</time>
+            
+
+            
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 11 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/post/2f3d2375.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论：</span> <span class="post-comments-count gitment-comments-count" data-xid="/post/2f3d2375.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/2f3d2375.html" itemprop="url">
-              
-                <span itemprop="name">浅析使用vue-router实现前端路由的两种方式</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-14T22:13:10+08:00"
-              content="2018-05-14" >
-          05-14
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/982e08e3.html" itemprop="url">
-              
-                <span itemprop="name">webpack之proxyTable设置跨域</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-03T21:42:26+08:00"
-              content="2018-05-03" >
-          05-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/f3fa0421.html" itemprop="url">
-              
-                <span itemprop="name">《免费前端教程不会告诉你这些》知乎LIVE读后感</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-22T11:59:02+08:00"
-              content="2018-04-22" >
-          04-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/41ca68e.html" itemprop="url">
-              
-                <span itemprop="name">JS正则表达式的分组匹配</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-22T10:42:49+08:00"
-              content="2018-04-22" >
-          04-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h4 id="关于vue-router"><a href="#关于vue-router" class="headerlink" title="关于vue-router"></a>关于vue-router</h4><p>由于最近的项目中一直在使用vue，所以前端路由方案也是使用的官方路由vue-router，之前在angularJS项目中也是用过UI-router，感觉大同小异，不过很显然vue-router更友好一些。本文就以vue-router为例浅析我所理解的前端路由，具体用法和一些基本语法就不一一介绍了，<a href="https://router.vuejs.org/zh-cn/" target="_blank" rel="noopener">官方文档</a>说的更加清晰</p>
+<a id="more"></a>
+<h4 id="关于前端路由"><a href="#关于前端路由" class="headerlink" title="关于前端路由"></a>关于前端路由</h4><p>据我所知，在现在这些MVC和MVVM框架兴起之前，是不存在前端路由的，页面之间的跳转是由后台控制的。随着前后端分离和单页面应用（SPA）的兴起和WEB项目复杂度的增加，再加上前面这些框架的支持，慢慢前端路由也就成为了现实。单页面应用的特点就是可以在改变URL在不重新请求页面的情况下更新页面视图。</p>
+<p>“更新视图但不重新请求页面”是前端路由的原理的核心之一，目前在浏览器环境中这一功能的实现主要有两种方式</p>
+<ul>
+<li>利用URL中的hash（”#”）</li>
+<li>利用History interface在 HTML5中新增的方法</li>
+</ul>
+<p>下面我们就来看看vue-router是如何通过这两种方式来实现前端路由的</p>
+<h4 id="vue-router实现前端路由的方法和对比"><a href="#vue-router实现前端路由的方法和对比" class="headerlink" title="vue-router实现前端路由的方法和对比"></a>vue-router实现前端路由的方法和对比</h4><p>使用过vue-router的都知道，在vue-router中有mode这样一个参数，这个参数的可选值有”hash”、 “history”、”abstract”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">  mode: &apos;history&apos;,</span><br><span class="line">  routes: [...]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>对应我们上面讲到的两种方式来说，hash就是第一种方式，history就是第二种方式，而第三种是在nodejs下的默认实现方式。</p>
+<p>那”hash”和”history”这两种方式各有什么优劣呢？</p>
+<ul>
+<li>首先在vue-router中默认使用的是hash这种方式，因为这种方式虽然带个#有点丑（官方竟然都这样说），但是不存在兼容性问题</li>
+<li>而history由于底层的实现根据MDN的介绍，调用history.pushState()，所以存在浏览器兼容性问题。</li>
+<li>如果不考虑兼容性问题的话，pushState肯定比只修改hash值更加强大，因为可以设置任意同源URL</li>
+<li>pushState可以设置和当前URL一模一样，这样也会把记录添加到栈中，而hash设置的新值必须和原来不一样</li>
+<li><p>还有，就算不考虑兼容问题的话，history模式还有一个问题，就是history模式会将URL修改的和正常请求后端的URL一样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://oursite.com/user/id</span><br></pre></td></tr></table></figure>
+<p>这样的话如果后端没有配置对应的user/id这样一个地址的话就会返回404，官方推荐的解决办法是在服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个 index.html 页面，这个页面就是你 app 依赖的页面。同时这么做以后，服务器就不再返回 404 错误页面，因为对于所有路径都会返回 index.html 文件。为了避免这种情况，在 Vue 应用里面覆盖所有的路由情况，然后在给出一个 404 页面。（这种方案我还没实践过，有机会要实践一下）</p>
+<ul>
+<li>所以综合考虑来说用在一些中后台项目中的话一般直接就采用hash这种默认方式了，而前台项目的话看需求选择使用history还是hash</li>
+</ul>
+</li>
+</ul>
+<h4 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h4><p>在写这篇文章之前看了一个大神写的分析vue-router的文章，每得出一个结论之前都是截取了相应的源文件，真的是做到了 有理有据，实在佩服。我文中之所以没引用是因为实在没有通读过vue-router的源码，也还不是看的太懂，所以就不班门弄斧了，但是在看这篇文章的过程中也慢慢打消了一些对源代码的恐惧，原来源代码也没那么晦涩难懂，认真看还是能看懂大部分的，所以以后移动要多多读这样的文章，慢慢试着去看看源代码，那样得到的结论才是最有一句的，而不是人云亦云，加油！</p>
+<p>参考文章：</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/27588422?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="noopener">【源码拾遗】从vue-router看前端路由的两种实现</a></li>
+<li><a href="https://www.jianshu.com/p/cb918fe14dc6" target="_blank" rel="noopener">VueJs路由跳转——vue-router的使用</a></li>
+</ul>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/c080eeb1.html" itemprop="url">
-              
-                <span itemprop="name">探究JS中的连等赋值问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-14T23:55:19+08:00"
-              content="2018-04-14" >
-          04-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/4da1c743.html" itemprop="url">
-              
-                <span itemprop="name">JS中将对象转化为数组</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-07T22:05:55+08:00"
-              content="2018-04-07" >
-          04-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/10937cb.html" itemprop="url">
-              
-                <span itemprop="name">JS种正则表达式的基础用法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-01T22:23:22+08:00"
-              content="2018-04-01" >
-          04-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/e384a99a.html" itemprop="url">
-              
-                <span itemprop="name">利用popstate事件和window下的history对象处理浏览器跳转问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-10T22:50:27+08:00"
-              content="2018-03-10" >
-          03-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/6af8e2ee.html" itemprop="url">
-              
-                <span itemprop="name">用hexo从零开始在githubpage上搭建自己的个人博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-06T22:34:57+08:00"
-              content="2018-03-06" >
-          03-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/5f818014.html" itemprop="url">
-              
-                <span itemprop="name">Hexo 折腾记录</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-05T22:50:19+08:00"
-              content="2018-03-05" >
-          03-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+            <a href="/tags/vue-router/" rel="tag"># vue-router</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/982e08e3.html" rel="next" title="webpack之proxyTable设置跨域">
+                <i class="fa fa-chevron-left"></i> webpack之proxyTable设置跨域
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -773,8 +613,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -889,6 +738,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#关于vue-router"><span class="nav-number">1.</span> <span class="nav-text">关于vue-router</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于前端路由"><span class="nav-number">2.</span> <span class="nav-text">关于前端路由</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue-router实现前端路由的方法和对比"><span class="nav-number">3.</span> <span class="nav-text">vue-router实现前端路由的方法和对比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1022,6 +887,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
 
   
 
@@ -1063,6 +932,30 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'wancheng7',
+            repo: 'wancheng7.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'f4c8c55f66809cf23a2cfd71a3fdbf208f84319c',
+            
+                client_id: '42389a91eca622eae137'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 
