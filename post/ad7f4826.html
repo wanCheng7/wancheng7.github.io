@@ -116,25 +116,25 @@
 
 
 
-  <meta name="description" content="引子之前，偶尔在项目中用过history接口做返回上一页功能，当时是用的history.go(-1)，前几天面试中遇到一个控制浏览器跳转的问题时有点懵，特意查了文档记录一下，并且列出一些目前能想到的应用：">
-<meta name="keywords" content="web API">
+  <meta name="description" content="深拷贝和浅拷贝的区别在讲深拷贝和浅拷贝的区别之前，回想一下我们平时拷贝一个对象时是怎么操作的？是不是像这样？1234var testObj1 = &amp;#123;a: 1, b:2&amp;#125;, testObj2=testObj1;testObj1.a = 7;console.log(testObj1);  //&amp;#123;a: 7, b:2&amp;#125;console.log(testObj2);">
+<meta name="keywords" content="深拷贝">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用popstate事件和window下的history对象处理浏览器跳转问题">
-<meta property="og:url" content="http://wancheng7.github.io/post/e384a99a.html">
+<meta property="og:title" content="探究JS中对象的深拷贝和浅拷贝">
+<meta property="og:url" content="http://wancheng7.github.io/post/ad7f4826.html">
 <meta property="og:site_name" content="万成">
-<meta property="og:description" content="引子之前，偶尔在项目中用过history接口做返回上一页功能，当时是用的history.go(-1)，前几天面试中遇到一个控制浏览器跳转的问题时有点懵，特意查了文档记录一下，并且列出一些目前能想到的应用：">
+<meta property="og:description" content="深拷贝和浅拷贝的区别在讲深拷贝和浅拷贝的区别之前，回想一下我们平时拷贝一个对象时是怎么操作的？是不是像这样？1234var testObj1 = &amp;#123;a: 1, b:2&amp;#125;, testObj2=testObj1;testObj1.a = 7;console.log(testObj1);  //&amp;#123;a: 7, b:2&amp;#125;console.log(testObj2);">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-24T16:09:41.395Z">
+<meta property="og:updated_time" content="2018-07-04T15:40:16.468Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="利用popstate事件和window下的history对象处理浏览器跳转问题">
-<meta name="twitter:description" content="引子之前，偶尔在项目中用过history接口做返回上一页功能，当时是用的history.go(-1)，前几天面试中遇到一个控制浏览器跳转的问题时有点懵，特意查了文档记录一下，并且列出一些目前能想到的应用：">
+<meta name="twitter:title" content="探究JS中对象的深拷贝和浅拷贝">
+<meta name="twitter:description" content="深拷贝和浅拷贝的区别在讲深拷贝和浅拷贝的区别之前，回想一下我们平时拷贝一个对象时是怎么操作的？是不是像这样？1234var testObj1 = &amp;#123;a: 1, b:2&amp;#125;, testObj2=testObj1;testObj1.a = 7;console.log(testObj1);  //&amp;#123;a: 7, b:2&amp;#125;console.log(testObj2);">
 
 
 
 
 
 
-  <link rel="canonical" href="http://wancheng7.github.io/post/e384a99a.html"/>
+  <link rel="canonical" href="http://wancheng7.github.io/post/ad7f4826.html"/>
 
 
 
@@ -144,7 +144,7 @@
   };
 </script>
 
-  <title>利用popstate事件和window下的history对象处理浏览器跳转问题 | 万成</title>
+  <title>探究JS中对象的深拷贝和浅拷贝 | 万成</title>
   
 
 
@@ -363,7 +363,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wancheng7.github.io/post/e384a99a.html">
+    <link itemprop="mainEntityOfPage" href="http://wancheng7.github.io/post/ad7f4826.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="万成">
@@ -380,7 +380,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">利用popstate事件和window下的history对象处理浏览器跳转问题</h1>
+          <h1 class="post-title" itemprop="name headline">探究JS中对象的深拷贝和浅拷贝</h1>
         
 
         <div class="post-meta">
@@ -392,7 +392,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-10T22:50:27+08:00">2018-03-10</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-04T23:38:35+08:00">2018-07-04</time>
             
 
             
@@ -428,8 +428,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/post/e384a99a.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论：</span> <span class="post-comments-count gitment-comments-count" data-xid="/post/e384a99a.html" itemprop="commentsCount"></span>
+                <a href="/post/ad7f4826.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论：</span> <span class="post-comments-count gitment-comments-count" data-xid="/post/ad7f4826.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -457,47 +457,65 @@
       
 
       
-        <h4 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h4><p>之前，偶尔在项目中用过history接口做返回上一页功能，当时是用的history.go(-1)，前几天面试中遇到一个控制浏览器跳转的问题时有点懵，特意查了文档记录一下，并且列出一些目前能想到的应用：</p>
+        <h4 id="深拷贝和浅拷贝的区别"><a href="#深拷贝和浅拷贝的区别" class="headerlink" title="深拷贝和浅拷贝的区别"></a>深拷贝和浅拷贝的区别</h4><p>在讲深拷贝和浅拷贝的区别之前，回想一下我们平时拷贝一个对象时是怎么操作的？是不是像这样？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var testObj1 = &#123;a: 1, b:2&#125;, testObj2=testObj1;</span><br><span class="line">testObj1.a = 7;</span><br><span class="line">console.log(testObj1);  //&#123;a: 7, b:2&#125;</span><br><span class="line">console.log(testObj2);  //&#123;a: 7, b:2&#125;</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<h4 id="popstate事件"><a href="#popstate事件" class="headerlink" title="popstate事件"></a>popstate事件</h4><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Events/popstate" target="_blank" rel="noopener">文档地址</a></p>
+<p>发现问题了吗？当testObj1变化时，testObj2相应的属性跟着变化了。这就是属于浅拷贝了，而所谓的深拷贝就是要做到当testObj1变化时testObj2不会跟着变化，这就是浅拷贝与深拷贝的区别。至少在我知道基本类型和引用类型的区别之前我是不知道为什么会这样的，那什么是基本类型和引用类型呢？</p>
+<h4 id="基本类型和引用类型"><a href="#基本类型和引用类型" class="headerlink" title="基本类型和引用类型"></a>基本类型和引用类型</h4><p>首先通过一个简单的例子看看与上面的例子有什么区别：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num1 = 1, num2 = num1;</span><br><span class="line">num1 = 7;</span><br><span class="line">console.log(num1);  // 7</span><br><span class="line">console.log(num2);  // 1</span><br></pre></td></tr></table></figure></p>
+<p>很显然，这里的变量num2并没有因为num1的变化而变化。其实，这里的num1和num2就是一种基本类型，而上面的那两个对象变量则属于引用类型。</p>
 <blockquote>
-<p>当活动历史记录条目更改时，将触发popstate事件。如果被激活的历史记录条目是通过对history.pushState（）的调用创建的，或者受到对history.replaceState（）的调用的影响，popstate事件的state属性包含历史条目的状态对象的副本。</p>
+<p>ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。基本类型值指的是那些保存在栈内存中的简单数据段，即这种值完全保存在内存中的一个位置。而引用类型值是指那些保存堆内存中的对象，意思是变量中保存的实际上只是一个指针，这个指针指向内存中的另一个位置，该位置保存对象。</p>
 </blockquote>
-<p>就我目前的认识来看，无论是浏览器的前进还是后退都会触发这个popstate事件，所以只能起到一个监听页面变化的作用。</p>
-<h4 id="History-接口"><a href="#History-接口" class="headerlink" title="History 接口"></a>History 接口</h4><ul>
-<li>属性<ul>
-<li>History.length 表示历史会话中元素的数目</li>
-<li>History.scrollRestoration 允许Web应用程序在历史导航上显式地设置默认滚动恢复行为。此属性可以是自动的（auto）或者手动的（manual）。</li>
-<li>History.state 返回一个表示历史堆栈顶部的状态的值。这是一种可以不必等待popstate 事件而查看状态而的方式。</li>
-</ul>
+<p>所以，按我的理解，基本类型就是直接存在内存里的一个具体点，相互之间是独立的，而引用类型存储的只是一个指向具体内存地址的指针，当两个对象相等赋值时，他们实际上是指向的同一个内存地址，所以，当一个变了，另一个跟着变也就不奇怪了。打个不恰当的比喻，基本类型之间就像独立的小超市，相互之间的门头都是不一样的，而连锁超市的话都是一样的，而且都会一起变化。</p>
+<h4 id="如何实现深拷贝"><a href="#如何实现深拷贝" class="headerlink" title="如何实现深拷贝"></a>如何实现深拷贝</h4><p>既然已经知道了深拷贝和浅拷贝的区别以及为什么会出现这种区别，那怎么实现深拷贝呢？我之前在业务开发中有遇到过这个问题，但都是采用先新建一个空对象，再遍历目标对象的属性，将目标对象的属性值一个个赋值给这个新的空对象，从而得到了一个新的对象，这个对象是完全等于之前的对象的，但是不会受它变化而影响，所以算是初步实现了深拷贝的，大体实现如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var testObj3 = &#123;a: 1, b:2, c:3, d:4&#125;;</span><br><span class="line">var testObj4 = &#123;&#125;;</span><br><span class="line">for(var key in testObj3)&#123;</span><br><span class="line">	testObj4[key] = testObj3[key];</span><br><span class="line">&#125;</span><br><span class="line">testObj3.a = 7;</span><br><span class="line">console.log(testObj3);  //&#123;a: 7, b:2, c:3, d:4&#125;</span><br><span class="line">console.log(testObj4);  //&#123;a: 1, b:2, c:3, d:4&#125;</span><br></pre></td></tr></table></figure></p>
+<p>咋一看这个方法当时虽然满足了我当时的业务需求，可是还有什么可以改进的地方呢？还有别的实现方式吗？</p>
+<h5 id="还有什么别的实现方式吗？"><a href="#还有什么别的实现方式吗？" class="headerlink" title="还有什么别的实现方式吗？"></a>还有什么别的实现方式吗？</h5><p>之前我也没细想过这个问题，知道后来偶尔间看到这篇<a href="https://github.com/BooheeFE/weekly/issues/1" target="_blank" rel="noopener">文章</a>，这篇文章提供的其他方式是我之前不知道，算是补上了我之前知识的盲区，在这里便是感谢。总结来说，还有以下几种方式：</p>
+<ul>
+<li><p>1.通过Onject.assign()</p>
+<ul>
+<li>Object.assign是ES6中引入的一种用于合并对象的方法，具体使用方法可以看<a href="http://es6.ruanyifeng.com/#docs/object#Object-assign" target="_blank" rel="noopener">文档</a> </li>
+<li><p>这个方法我之前是用的不多的，但最近几个项目中有些使用后算是知道了这个属性，其实当时就应该可以想到可以用于深拷贝的，大体用法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var obj1 = &#123;x: 1, y:2&#125;, obj2 = Object.assign(&#123;&#125;, obj1);</span><br><span class="line">obj2.x = 7;</span><br><span class="line">console.log(obj1);  //&#123;a: 7, b:2&#125;</span><br><span class="line">console.log(obj2);  //&#123;a: 1, b:2&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li>方法<ul>
-<li>History.back()  <blockquote>
-<p>等同于history.go(-1)</p>
-</blockquote>
+<li><p>可以看到，完美地深拷贝了这个对象，新对象并没有受原对象影响，可是，当对象为嵌套对象的时候呢?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var obj3 = &#123;x:1, y:2, z:&#123;name: 3&#125;&#125;, obj4 = Object.assign(&#123;&#125;, obj3);</span><br><span class="line">obj4.z.name = 7;</span><br><span class="line">console.log(obj3);  //&#123;x:1, y:2, z:&#123;name: 7&#125;&#125;</span><br><span class="line">console.log(obj4);  //&#123;x:1, y:2, z:&#123;name: 7&#125;&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li>History.forward() <blockquote>
-<p>等同于historygo(1)</p>
-</blockquote>
-</li>
-<li>History.go() <blockquote>
-<p>这个方法中如果参数超出范围或者不对就不会起效果</p>
-</blockquote>
-</li>
-<li>History.pushState()<blockquote>
-<p>pushState() 带有三个参数：一个状态对象，一个标题（现在被忽略了），以及一个可选的URL地址。下面将对这三个参数进行细致的检查</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function pushHistory() &#123;  </span><br><span class="line">  var state = &#123;  </span><br><span class="line">    title: &quot;title&quot;,  </span><br><span class="line">    url: &quot;#&quot;  </span><br><span class="line">  &#125;;  </span><br><span class="line">  window.history.pushState(state, &quot;title&quot;, &quot;#xx&quot;);  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
+<li><p>事实证明，对于嵌套对象，Object.assign()深拷贝失效了，所以说，<strong>Object.assign()只能实现一维对象的深拷贝</strong></p>
 </li>
 </ul>
 </li>
+<li><p>2.通过JSON.parse(JSON.stringify(obj))</p>
+<ul>
+<li><p>这个方法也是在前一段时间朋友问我深拷贝的方法时偶尔查到的，之前是没用的，感觉还蛮好用的:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var obj5 = &#123;x: 1, y:2&#125;, obj6 = JSON.parse(JSON.stringify(obj5));</span><br><span class="line">obj6.x = 7;</span><br><span class="line">console.log(obj5);  //&#123;x: 1, y:2&#125;</span><br><span class="line">console.log(obj6);  //&#123;x: 7, y:2&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可是这个方法能解决多维对象的深拷贝问题吗？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var obj9 = &#123;x:1, y:2, z:&#123;name: 3&#125;&#125;, obj10 = Object.assign(&#123;&#125;, obj3);</span><br><span class="line">obj10.z.name = 7;</span><br><span class="line">console.log(obj9);  //&#123;x:1, y:2, z:&#123;name: 3&#125;&#125;</span><br><span class="line">console.log(obj10);  //&#123;x:1, y:2, z:&#123;name: 7&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从代码上来看，这个方法完美地实现了多维对象的深拷贝，可是这样小小改动一下就会发现有问题了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var obj9 = &#123;x:1, y:2, z:&#123;name: 3, func: function()&#123;&#125;&#125;&#125;, obj10 = Object.assign(&#123;&#125;, obj3);</span><br><span class="line">obj10.z.name = 7;</span><br><span class="line">console.log(obj9);  //&#123;x:1, y:2, z:&#123;name: 3, func: function()&#123;&#125;&#125;&#125;&#125;</span><br><span class="line">console.log(obj10);  //&#123;x:1, y:2, z:&#123;name: 7&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>是的，当多维对象里有函数时，并没有复制，这是为什么，这个方法的<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify?" target="_blank" rel="noopener">MDN</a>上有解释：</p>
+<blockquote>
+<p>undefined、任意的函数以及 symbol 值，在序列化过程中会被忽略（出现在非数组对象的属性值中时）或者被转换成 null（出现在数组中时）。</p>
+</blockquote>
+</li>
+<li>所以，JSON.parse(JSON.stringify(obj))这种方法虽然可以拷贝多维对象，<strong>但不能深拷贝含有undefined、function、symbol值的对象。</strong></li>
 </ul>
-<p>其他方法就不一一列举了，感兴趣的看<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/History" target="_blank" rel="noopener">文档</a></p>
-<h4 id="监听浏览器返回按钮"><a href="#监听浏览器返回按钮" class="headerlink" title="监听浏览器返回按钮"></a>监听浏览器返回按钮</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function pushHistory() &#123;  </span><br><span class="line">    var state = &#123;  </span><br><span class="line">      title: &quot;title&quot;,  </span><br><span class="line">      url: &quot;#&quot;  </span><br><span class="line">    &#125;;  </span><br><span class="line">    window.history.pushState(state, &quot;title&quot;, &quot;#xx&quot;);  </span><br><span class="line">&#125;</span><br><span class="line">pushHistory();</span><br><span class="line">window.addEventListener(&quot;popstate&quot;, function(e) &#123;  </span><br><span class="line">    console.log(e);</span><br><span class="line">    alert(&quot;我监听到了浏览器的返回按钮事件啦&quot;);//根据自己的需求实现自己的功能  </span><br><span class="line">&#125;, false);</span><br></pre></td></tr></table></figure>
-<p>这个地方就监听了浏览器的返回事件，但我有个疑问，如果不先pushState一个地址就监听不到，直接跳转了，这个暂时没搞懂，有知道的小伙伴可以留言讨论一下。</p>
-<h4 id="禁止返回上一页的一种方案"><a href="#禁止返回上一页的一种方案" class="headerlink" title="禁止返回上一页的一种方案"></a>禁止返回上一页的一种方案</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">history.pushState(null, null, document.URL);</span><br><span class="line">window.addEventListener(&quot;popstate&quot;,function(e) &#123;  </span><br><span class="line">    console.log(e);</span><br><span class="line">    history.pushState(null, null, document.URL);</span><br><span class="line">&#125;, false);</span><br></pre></td></tr></table></figure>
-<p>这个其实就是利用pushState向浏览历史列表中插入当前页面，在点击后退前和点击时都插入一次，那样无论点前进还是后退永远都会留在这个页面了</p>
-<p>如果大家还有什么关于利用history接口和popstate结合控制页面跳转的实际应用案例，欢迎留言讨论交流！</p>
+</li>
+</ul>
+<h5 id="可以改进的地方"><a href="#可以改进的地方" class="headerlink" title="可以改进的地方"></a>可以改进的地方</h5><ul>
+<li>最开始那种通过for.in遍历所有属性的方式是会将原型链上的属性也遍历出来的，一般来说是不要的，所以最好使用obj.hasOwnProperty(key)来进行筛选判断，当然具体情况要根据业务需求来。</li>
+<li>后面的几种方法都没有能完美地实现多维数组的深拷贝，所以还得祭出大杀器：递归。简单来说，就是先新建一个新对象，然后通过Object.keys()遍历原对象的所有属性列表，再遍历这个列表，如果有子集也是对象再递归一次，最终得到了深拷贝的对象：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function deepCopy(obj) &#123;</span><br><span class="line">	let result = &#123;&#125;;</span><br><span class="line">	let keys = Object.keys(obj), key=null, tem=null;</span><br><span class="line">	for(var i=0; i&lt;keys.length; i++) &#123;</span><br><span class="line">		key = keys[i];</span><br><span class="line">		temp = obj[key];</span><br><span class="line">		if (temp &amp;&amp; typeof temp === &apos;object&apos;) &#123;</span><br><span class="line">			result[key] = deepCopy(temp);</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			result[key] = temp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return result</span><br><span class="line">&#125;</span><br><span class="line">console.log(deepCopy(&#123;x:1, y:3&#125;))</span><br><span class="line">var obj7 = &#123;x:1, y:3, z:&#123;name: 7, func: function()&#123;&#125;&#125;&#125;;</span><br><span class="line">var obj8 = deepCopy(obj7);</span><br><span class="line">obj8.z.name = 8;</span><br><span class="line">console.log(obj8);  // &#123;x:1, y:3, z:&#123;name: 8, func: function()&#123;&#125;&#125;&#125; </span><br><span class="line">console.log(obj7)   // &#123;x:1, y:3, z:&#123;name: 7, func: function()&#123;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这样，就得到了一个可以兼容多维对象，并且可以实现对function，null，symbol值等特殊值的深拷贝。同时，我们也可以利用第三方库实现深拷贝，如jquery的$.extend和lodash的_.cloneDeep。</p>
+<h5 id="针对一种特殊情况的处理"><a href="#针对一种特殊情况的处理" class="headerlink" title="针对一种特殊情况的处理"></a>针对一种特殊情况的处理</h5><p>本来上面的代码已经几乎完美地实现了深拷贝，但是，有一种特殊情况，就是当拷贝的对象本来就是一个循环引用的对象时，再去递归，那就无穷无尽会爆栈了。像这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var obj1 = &#123;</span><br><span class="line">    x: 1, </span><br><span class="line">    y: 2</span><br><span class="line">&#125;;</span><br><span class="line">obj1.z = obj1;</span><br><span class="line">var obj2 = deepCopy(obj1);</span><br></pre></td></tr></table></figure></p>
+<p>我参考的处理方案就是加一层股票率判断，虽然我觉得这种情况根本就没有什么现实存在的意义，但就当一种临界值的处理吧：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">function deepCopy(obj, parent) &#123;</span><br><span class="line">	let result = &#123;&#125;;</span><br><span class="line">	let keys = Object.keys(obj), key=null, tem=null, parent_=parent;</span><br><span class="line">	if (parent_) &#123;</span><br><span class="line">		if (parent_.originalParent === obj) &#123;</span><br><span class="line">			return parent_.curentParent;</span><br><span class="line">		&#125;</span><br><span class="line">		parent_ = parent_.parent;</span><br><span class="line">	&#125;</span><br><span class="line">	for(var i=0; i&lt;keys.length; i++) &#123;</span><br><span class="line">		key = keys[i];</span><br><span class="line">		temp = obj[key];</span><br><span class="line">		if (temp &amp;&amp; typeof temp === &apos;object&apos;) &#123;</span><br><span class="line">			result[key] = deepCopy(temp, &#123;</span><br><span class="line">				originalParent: obj,</span><br><span class="line">				curentParent: result,</span><br><span class="line">				parent: parent</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			result[key] = temp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return result</span><br><span class="line">&#125;</span><br><span class="line">obj1.z = obj1;</span><br><span class="line">var obj2 = deepCopy(obj1);</span><br><span class="line">console.log(obj2); //很多东西</span><br></pre></td></tr></table></figure></p>
+<p>这样，一个深拷贝函数就完成了，对于数组的话是同样适用的，毕竟数组也是特殊的对象嘛，当然实际项目中使用第三方库可能还会更加方便一点，很多时候造轮子并不是为了在项目中使用而是为了了解轮子的构造，这个很重要，之后还会继续造轮子的，这是个深入过膝的过程，加油！</p>
+<p>参考文章：</p>
+<ul>
+<li><a href="https://github.com/BooheeFE/weekly/issues/1" target="_blank" rel="noopener">低门槛彻底理解JavaScript中的深拷贝和浅拷贝</a></li>
+</ul>
 
       
     </div>
@@ -518,7 +536,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/web-API/" rel="tag"># web API</a>
+            <a href="/tags/深拷贝/" rel="tag"># 深拷贝</a>
           
         </div>
       
@@ -531,8 +549,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/6af8e2ee.html" rel="next" title="用hexo从零开始在githubpage上搭建自己的个人博客">
-                <i class="fa fa-chevron-left"></i> 用hexo从零开始在githubpage上搭建自己的个人博客
+              <a href="/post/a22d4e29.html" rel="next" title="《BAT前端进阶[师徒班]》学习总结">
+                <i class="fa fa-chevron-left"></i> 《BAT前端进阶[师徒班]》学习总结
               </a>
             
           </div>
@@ -540,10 +558,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/post/10937cb.html" rel="prev" title="JS种正则表达式的基础用法">
-                JS种正则表达式的基础用法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -764,7 +778,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#引子"><span class="nav-number">1.</span> <span class="nav-text">引子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#popstate事件"><span class="nav-number">2.</span> <span class="nav-text">popstate事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#History-接口"><span class="nav-number">3.</span> <span class="nav-text">History 接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#监听浏览器返回按钮"><span class="nav-number">4.</span> <span class="nav-text">监听浏览器返回按钮</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#禁止返回上一页的一种方案"><span class="nav-number">5.</span> <span class="nav-text">禁止返回上一页的一种方案</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#深拷贝和浅拷贝的区别"><span class="nav-number">1.</span> <span class="nav-text">深拷贝和浅拷贝的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本类型和引用类型"><span class="nav-number">2.</span> <span class="nav-text">基本类型和引用类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何实现深拷贝"><span class="nav-number">3.</span> <span class="nav-text">如何实现深拷贝</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#还有什么别的实现方式吗？"><span class="nav-number">3.1.</span> <span class="nav-text">还有什么别的实现方式吗？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#可以改进的地方"><span class="nav-number">3.2.</span> <span class="nav-text">可以改进的地方</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#针对一种特殊情况的处理"><span class="nav-number">3.3.</span> <span class="nav-text">针对一种特殊情况的处理</span></a></li></ol></li></ol></div>
             
 
           </div>
