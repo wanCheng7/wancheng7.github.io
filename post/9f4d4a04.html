@@ -116,20 +116,26 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="万成">
-<meta property="og:url" content="http://wancheng7.github.io/tags/代理/index.html">
+  <meta name="description" content="神秘的设计模式一直以来，我都感觉设计模式这个东西比较虚，总不知道是用来干嘛的。随着学习的深入，总听到别人说某某地方运用了什么设计模式，于是乎出于好奇就查资料加深了一下理解。目前也还只对发布订阅模式有些简单的理解。说起发布订阅模式，确实在很多地方都能看到它的影子，像JQ时代的trigger和on方法，还有现在的vue中的emit和on方法，之所以想先总结一些我目前所理解的发布订阅模式，是因为目前就这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我所理解的发布订阅模式">
+<meta property="og:url" content="http://wancheng7.github.io/post/9f4d4a04.html">
 <meta property="og:site_name" content="万成">
+<meta property="og:description" content="神秘的设计模式一直以来，我都感觉设计模式这个东西比较虚，总不知道是用来干嘛的。随着学习的深入，总听到别人说某某地方运用了什么设计模式，于是乎出于好奇就查资料加深了一下理解。目前也还只对发布订阅模式有些简单的理解。说起发布订阅模式，确实在很多地方都能看到它的影子，像JQ时代的trigger和on方法，还有现在的vue中的emit和on方法，之所以想先总结一些我目前所理解的发布订阅模式，是因为目前就这">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/555379/201603/555379-20160313183439366-1623019133.png">
+<meta property="og:updated_time" content="2018-09-02T15:03:18.006Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="万成">
+<meta name="twitter:title" content="我所理解的发布订阅模式">
+<meta name="twitter:description" content="神秘的设计模式一直以来，我都感觉设计模式这个东西比较虚，总不知道是用来干嘛的。随着学习的深入，总听到别人说某某地方运用了什么设计模式，于是乎出于好奇就查资料加深了一下理解。目前也还只对发布订阅模式有些简单的理解。说起发布订阅模式，确实在很多地方都能看到它的影子，像JQ时代的trigger和on方法，还有现在的vue中的emit和on方法，之所以想先总结一些我目前所理解的发布订阅模式，是因为目前就这">
+<meta name="twitter:image" content="https://images2015.cnblogs.com/blog/555379/201603/555379-20160313183439366-1623019133.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://wancheng7.github.io/tags/代理/"/>
+  <link rel="canonical" href="http://wancheng7.github.io/post/9f4d4a04.html"/>
 
 
 
@@ -139,7 +145,7 @@
   };
 </script>
 
-  <title>标签: 代理 | 万成</title>
+  <title>我所理解的发布订阅模式 | 万成</title>
   
 
 
@@ -186,7 +192,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <a href="https://github.com/wancheng7"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
@@ -342,58 +348,222 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>代理<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wancheng7.github.io/post/9f4d4a04.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="万成">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="万成">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/post/982e08e3.html" itemprop="url">
-              
-                <span itemprop="name">webpack之proxyTable设置跨域</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">我所理解的发布订阅模式</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-03T21:42:26+08:00"
-              content="2018-05-03" >
-          05-03
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-02T23:01:29+08:00">2018-09-02</time>
+            
 
-    </header>
-  </article>
+            
+            
 
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/post/9f4d4a04.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论：</span> <span class="post-comments-count gitment-comments-count" data-xid="/post/9f4d4a04.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="神秘的设计模式"><a href="#神秘的设计模式" class="headerlink" title="神秘的设计模式"></a>神秘的设计模式</h3><p>一直以来，我都感觉设计模式这个东西比较虚，总不知道是用来干嘛的。随着学习的深入，总听到别人说某某地方运用了什么设计模式，于是乎出于好奇就查资料加深了一下理解。目前也还只对发布订阅模式有些简单的理解。说起发布订阅模式，确实在很多地方都能看到它的影子，像JQ时代的trigger和on方法，还有现在的vue中的emit和on方法，之所以想先总结一些我目前所理解的发布订阅模式，是因为目前就这个设计模式了解的多一点，而且前段时间在学习vue双向绑定原理时发现也用到了发布订阅模式，但是不太理解那个里面的用法，所以，一步一步来吧。</p>
+<a id="more"></a>
+<h3 id="发布订阅模式"><a href="#发布订阅模式" class="headerlink" title="发布订阅模式"></a>发布订阅模式</h3><p>我的理解就是订阅者把自己需要注册的事件名和回调统一注册到一个调度中心，然后当这个事件触发的时候，发布者就会发布到调度中心触发所有注册了这个事件的订阅者的回调。</p>
+<p>我看过一个简单的比喻就是发布订阅模式就像我们以前像杂志社订杂志，你会告诉杂志社你需要什么杂志，并且杂志除了之后邮寄到哪里，而杂志社就相当于一个发布者，当最新一期的杂志出来之后他就会先查看某某杂志有哪些人订阅了，然后通知邮递员根据地址分发出去，这个根据不同人订阅时填的地址分发出去的过程实际上就可以理解为订阅者的回调。<br><img src="https://images2015.cnblogs.com/blog/555379/201603/555379-20160313183439366-1623019133.png" alt="image"></p>
+<h3 id="实现一个简单的发布订阅模式"><a href="#实现一个简单的发布订阅模式" class="headerlink" title="实现一个简单的发布订阅模式"></a>实现一个简单的发布订阅模式</h3><p>我们先用一个简单的代码来实现上面例子中的订阅杂志的例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">let crop = &#123;&#125;;  //自定义一个对象</span><br><span class="line">crop.list = &#123;&#125;;  //存放缓存毁掉函数</span><br><span class="line">crop.on = function(key, fn) &#123;</span><br><span class="line">	if (!this.list[key]) &#123;</span><br><span class="line">		this.list[key] = [];</span><br><span class="line">	&#125;</span><br><span class="line">	this.list[key].push(fn);</span><br><span class="line">&#125;</span><br><span class="line">crop.emit = function() &#123;</span><br><span class="line">	let key = [].shift.call(arguments);</span><br><span class="line">	let fns = this.list[key];</span><br><span class="line">	if (!fns || !fns.length) &#123;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	fns.forEach( fn =&gt; &#123;</span><br><span class="line">		fn.apply(this, arguments)</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line">crop.on(&apos;readers&apos;, function(addr)&#123;</span><br><span class="line">	console.log(&apos;我订阅的《读者》更新了的话请寄到&apos;+addr);</span><br><span class="line">&#125;)</span><br><span class="line">crop.on(&apos;youth&apos;, function(tel)&#123;</span><br><span class="line">	console.log(&apos;我订阅的《青年文摘》更新了的话请打我电话：&apos;+tel);</span><br><span class="line">&#125;)</span><br><span class="line">crop.emit(&apos;readers&apos;, &apos;浙江省杭州市xxx&apos;);  // 我订阅的《读者》更新了的话请寄到浙江省杭州市xxx</span><br><span class="line">crop.emit(&apos;youth&apos;, &apos;186xxxx7412&apos;);  //我订阅的《青年文摘》更新了的话请打我电话：186xxxx7412</span><br></pre></td></tr></table></figure></p>
+<p>最开始我看到简单的发布订阅模式的实现代码时不时太理解为什么一定要加一个key，其实用订阅杂志这个例子就很好理解了，你不告诉杂志社你订阅的杂志叫什么名字，那我怎么知道要邮寄哪本杂志给你呢，代码层面来说就会将所有订阅者的事件回调执行一次，那肯定不是我们需要的。</p>
+<h3 id="通用型实现"><a href="#通用型实现" class="headerlink" title="通用型实现"></a>通用型实现</h3><p>主要是增加了remove功能，简单理解就是我订阅了某本杂志，中途也是可以退订的嘛，哈哈，那样，就算那本杂志更新了，因为你已经不在通知列表里了，别人照样会通知，可是不会通知你了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">// 通用型</span><br><span class="line">let event = &#123;</span><br><span class="line">	list: &#123;&#125;,</span><br><span class="line">	on: function(key, fn) &#123;</span><br><span class="line">		if (!this.list[key]) &#123;</span><br><span class="line">			this.list[key] = [];</span><br><span class="line">		&#125;</span><br><span class="line">		this.list[key].push(fn);</span><br><span class="line">	&#125;,</span><br><span class="line">	emit: function() &#123;</span><br><span class="line">		let key = [].shift.call(arguments);</span><br><span class="line">		let fns = this.list[key];</span><br><span class="line">		if (!fns || !fns.length) &#123;</span><br><span class="line">			return</span><br><span class="line">		&#125;</span><br><span class="line">		fns.forEach( (fn) =&gt; &#123;</span><br><span class="line">			fn.apply(this, arguments);</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;,</span><br><span class="line">	remove: function(key, fn) &#123;</span><br><span class="line">		let fns = this.list[key];</span><br><span class="line">		if (!fns || !fns.length) &#123;</span><br><span class="line">			return</span><br><span class="line">		&#125;</span><br><span class="line">		if (!fn) &#123;</span><br><span class="line">			fns = []</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			fns.forEach( (cb, i) =&gt; &#123;</span><br><span class="line">				if (cb === fn) &#123;</span><br><span class="line">					fns.splice(i, 1);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">event.on(&apos;click&apos;, function(name)&#123;</span><br><span class="line">	console.log(&apos;你的名字是：&apos;+name)</span><br><span class="line">&#125;)</span><br><span class="line">function cat() &#123;</span><br><span class="line">console.log(&apos;一起喵喵喵&apos;);</span><br><span class="line">&#125;</span><br><span class="line">function dog() &#123;</span><br><span class="line">console.log(&apos;一起旺旺旺&apos;);</span><br><span class="line">&#125;</span><br><span class="line">event.on(&apos;pet&apos;, cat);</span><br><span class="line">event.on(&apos;pet&apos;, dog);</span><br><span class="line">event.on(&apos;pet&apos;, data =&gt; &#123;</span><br><span class="line">	console.log(data)</span><br><span class="line">&#125;);</span><br><span class="line">event.remove(&apos;pet&apos;, dog);</span><br><span class="line">event.emit(&apos;click&apos;, &apos;hello world&apos;);</span><br><span class="line">event.emit(&apos;pet&apos;, &apos;二哈&apos;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="工作中的应用"><a href="#工作中的应用" class="headerlink" title="工作中的应用"></a>工作中的应用</h3><p>就像前文讲的，JQ的trigger和on方法、vue中的emit和on方法，包括dom事件模型中的addEventListener和attachEvent等，实际上都是先订阅某个事件，并传入了触发事件的回调。当然还有一些其他用法，像用来做打点什么的，只是我还没实际用过就不多说了。特别提一下vue中的emit和on方法，这个我相信用过vue的都不会陌生，一般来说都是用他们做父子组件之间的通信，说白了就是在父组件中订阅一个自定义方法名和回调，然后在子组件中触发这个自定义事件和回调。</p>
+<p>我想，既然这个父子组件的通信也利用的发布订阅模式，而且几个方法都是在vue的实例上的，所以在一些简单页面上做平行组件之间的通信也是可以通过vue实例上的emit和on方法实现的。事实上我尝试过，也是能做到的。只是后面又和同事讨论了一下，这样做平行组件之间通信的话太不稳定了，vue实例上注册的自定义事件容易冲突，而且状态管理也会很混乱，所以还是慎用吧，稍微大一点的项目还是得用vuex做组件之间通信的状态管理。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>其实将发布订阅模式的大体模式了解清楚之后确实能从很多地方看待他的影子，就我目前的理解来看，主要有这么几点好处吧：</p>
+<ul>
+<li>将订阅者和发布者给解耦了，作为发布者来说我不用管谁订阅了要干什么，我只要通知订阅了的对象并执行相应的回调就好了</li>
+<li>对于异步编程来说，可以更松耦合的代码编写</li>
+</ul>
+<p>至于缺点吧，我查的资料来说主要是</p>
+<ul>
+<li>创建订阅者本身需要消耗一定的时间和内存</li>
+<li>多个发布者和订阅者嵌套在一起的时候，程序难以跟踪和维护</li>
+</ul>
+<p>后面这一点我想大概就是我上文中讲到的处理vue非父子组件之间通信的情况吧，所以总结就是，模式虽好，不可以滥用噢，哈哈，不过正常使用的还是不会有什么的问题的。</p>
+<p>而且深入理解这个模式也能够让我们更容易地理解一些框架和解构设计，我相信理解了并好好利用的话一定能对自己的编程能力带来不小的提升！</p>
+<p>下一步，接着硬啃vue双向绑定和框架实现原理，加油！我相信那些一下子看不懂的东西多看几次多查一些资料，将内容拆分消化之后一定能慢慢看懂的！还有就是分享一点感悟，那就是贪多了嚼不烂，我发未知的现焦虑总是促使自己去不停地看新东西，可是由于时间和理解能力的关系往往又没有吃透，甚至有的时候出现了之前了解过查过资料的知识点又在查资料，这样时间的利用率其实是很低的。所以，以后遇到一个想要了解知识点就查资料尽可能地吸收一波之后总结、沉淀，至少要保证之后再遇到这个知识点不需要哦再去查过多的东西，看看自己写的总结和参考文章，那样应该也就回忆的差不多了。</p>
+<p>所以，尽可能地深入，并坚持总结吧，加油！</p>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>
+<li><a href="https://juejin.im/post/5b125ad3e51d450688133f22" target="_blank" rel="noopener">发布订阅模式，在工作中它的能量超乎你的想象</a></li>
+<li><a href="https://www.cnblogs.com/lovesong/p/5272752.html" target="_blank" rel="noopener">设计模式（三）：观察者模式与发布/订阅模式区别</a></li>
+</ul>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/5590b762.html" rel="next" title="移动web开发适配方案之Rem">
+                <i class="fa fa-chevron-left"></i> 移动web开发适配方案之Rem
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -414,8 +584,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -536,6 +715,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#神秘的设计模式"><span class="nav-number">1.</span> <span class="nav-text">神秘的设计模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布订阅模式"><span class="nav-number">2.</span> <span class="nav-text">发布订阅模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现一个简单的发布订阅模式"><span class="nav-number">3.</span> <span class="nav-text">实现一个简单的发布订阅模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通用型实现"><span class="nav-number">4.</span> <span class="nav-text">通用型实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作中的应用"><span class="nav-number">5.</span> <span class="nav-text">工作中的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文章"><span class="nav-number">7.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -669,6 +864,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
 
   
 
@@ -710,6 +909,30 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'wancheng7',
+            repo: 'wancheng7.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'f4c8c55f66809cf23a2cfd71a3fdbf208f84319c',
+            
+                client_id: '42389a91eca622eae137'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 
