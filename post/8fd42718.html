@@ -116,20 +116,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="万成">
-<meta property="og:url" content="http://wancheng7.github.io/tags/填坑记录/index.html">
+  <meta name="description" content="前言我们平时工作中传文件时为了提高传输速度一般都会把文件压缩一下再传，那样速度回快一些，尤其是那些文件很多的文件夹，比较常用的压缩格式就是zip,rar了。那我们日常网页中利用http协议请求的那些资源可不可以压缩呢，当然是可以了，这就要说到我们今天的主角gzip了。 gzip之前我并没有在项目中用过，就每每查阅文档时听说某一个框架文件经gzip压缩之后就变得多小多小了，甚是好奇，所以今天特意查了">
+<meta name="keywords" content="gzip">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gzip压缩初探">
+<meta property="og:url" content="http://wancheng7.github.io/post/8fd42718.html">
 <meta property="og:site_name" content="万成">
+<meta property="og:description" content="前言我们平时工作中传文件时为了提高传输速度一般都会把文件压缩一下再传，那样速度回快一些，尤其是那些文件很多的文件夹，比较常用的压缩格式就是zip,rar了。那我们日常网页中利用http协议请求的那些资源可不可以压缩呢，当然是可以了，这就要说到我们今天的主角gzip了。 gzip之前我并没有在项目中用过，就每每查阅文档时听说某一个框架文件经gzip压缩之后就变得多小多小了，甚是好奇，所以今天特意查了">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-18T12:58:50.447Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="万成">
+<meta name="twitter:title" content="gzip压缩初探">
+<meta name="twitter:description" content="前言我们平时工作中传文件时为了提高传输速度一般都会把文件压缩一下再传，那样速度回快一些，尤其是那些文件很多的文件夹，比较常用的压缩格式就是zip,rar了。那我们日常网页中利用http协议请求的那些资源可不可以压缩呢，当然是可以了，这就要说到我们今天的主角gzip了。 gzip之前我并没有在项目中用过，就每每查阅文档时听说某一个框架文件经gzip压缩之后就变得多小多小了，甚是好奇，所以今天特意查了">
 
 
 
 
 
 
-  <link rel="canonical" href="http://wancheng7.github.io/tags/填坑记录/"/>
+  <link rel="canonical" href="http://wancheng7.github.io/post/8fd42718.html"/>
 
 
 
@@ -139,7 +144,7 @@
   };
 </script>
 
-  <title>标签: 填坑记录 | 万成</title>
+  <title>gzip压缩初探 | 万成</title>
   
 
 
@@ -186,7 +191,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <a href="https://github.com/wancheng7"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
@@ -342,86 +347,225 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>填坑记录<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wancheng7.github.io/post/8fd42718.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="万成">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="万成">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/post/6af8e2ee.html" itemprop="url">
-              
-                <span itemprop="name">用hexo从零开始在githubpage上搭建自己的个人博客</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">gzip压缩初探</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-06T22:34:57+08:00"
-              content="2018-03-06" >
-          03-06
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-18T20:57:04+08:00">2018-11-18</time>
+            
 
-    </header>
-  </article>
+            
+            
 
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/post/8fd42718.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论：</span> <span class="post-comments-count gitment-comments-count" data-xid="/post/8fd42718.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/5f818014.html" itemprop="url">
-              
-                <span itemprop="name">Hexo 折腾记录</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-05T22:50:19+08:00"
-              content="2018-03-05" >
-          03-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我们平时工作中传文件时为了提高传输速度一般都会把文件压缩一下再传，那样速度回快一些，尤其是那些文件很多的文件夹，比较常用的压缩格式就是zip,rar了。那我们日常网页中利用http协议请求的那些资源可不可以压缩呢，当然是可以了，这就要说到我们今天的主角gzip了。</p>
+<p>gzip之前我并没有在项目中用过，就每每查阅文档时听说某一个框架文件经gzip压缩之后就变得多小多小了，甚是好奇，所以今天特意查了一下。</p>
+<a id="more"></a>
+<h3 id="gzip压缩的好处"><a href="#gzip压缩的好处" class="headerlink" title="gzip压缩的好处"></a>gzip压缩的好处</h3><p>好处当然是很明显的啦，就是可以大大减小传输文件的大小，提高页面加载速度、节省带宽。而且压缩的比率是可以调节的，我们常用的服务器端压缩是3到10倍，一个本来100k的文件能压缩到20k左右，想想都美滋滋，今天看了我们公司的官网用了gzip才发现压缩与不压缩差别还是蛮大的，哈哈。当然并不是所有的文件都能压缩这么多，像我们常用的CSS,JS文件是可以压缩很多的，而图片那些文件本来就压缩过了就没有多少可以压缩了。</p>
+<h3 id="gzip压缩的过程"><a href="#gzip压缩的过程" class="headerlink" title="gzip压缩的过程"></a>gzip压缩的过程</h3><p>gzip是一种流行的文件压缩算法，他会把文件压缩为.gz然后传给浏览器，最后浏览器负责解压文件呈现给客户。所以，要想实现文件的gzip压缩与解压，服务端和浏览器端都得支持。他们的通信过程大体如下：</p>
+<ul>
+<li>首先我们要将http请求的请求头中的==accept-encoding==属性设为gzip、deflate，表明浏览器支持gzip压缩方式</li>
+<li></li>
+<li>web服务器收到浏览器的请求之后，会判断浏览器是否支持gzip压缩，如果支持就传输压缩后的响应内容，如果不支持就传输未压缩的内容。当然，服务器会对压缩文件进行缓存，并不是每次请求都要再压缩一次</li>
+<li>浏览器接收到内容后判断文件是否被压缩，如果压缩了就先解压再解析（IE5.5以上才支持gzip）</li>
+</ul>
+<h3 id="谁来压缩"><a href="#谁来压缩" class="headerlink" title="谁来压缩"></a>谁来压缩</h3><p>答案就两个，不是服务端就是客户端。</p>
+<p>上面已经讲到了以前常用的一种方式是服务端压缩，浏览器解压。其实我们开发端可是可以压缩的，比如我们日常用的打包软件webpack就有<a href="https://webpack.css88.com/plugins/compression-webpack-plugin.html" target="_blank" rel="noopener">compression-webpack-plugin</a>这么个插件专门做压缩的，大概用法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const CompressionWebpackPlugin = require(&apos;compression-webpack-plugin&apos;);</span><br><span class="line"></span><br><span class="line">plugins: [</span><br><span class="line"> new CompressionPlugin(&#123;</span><br><span class="line">	test: /\.js/,  //满足正则表达式的会被压缩</span><br><span class="line">    filename: &apos;[path].gz[query]&apos;,  //目标文件名</span><br><span class="line">    algorithm: &apos;gzip&apos;,  //使用gzip压缩</span><br><span class="line">    threshold: 10240,  //资源文件大于10240b=10k时会被压缩</span><br><span class="line">  &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p><strong>既然已经存在了服务端响应请求时压缩，为什么还会存在应用构建时压缩这种方式呢？</strong><br>存在并且被很多人使用就一定有它存在的价值，带着这份疑问我查询资料得知：gzip压缩文件是分等级的，共十级。等级越高压缩效果越好可也以为着更耗时嘛。如果你在服务端相应请求时压缩，那我请求一个文件不还是得等好久？而且即便是有了缓存，服务端压缩时还是有时间开销的。</p>
+<p>但是构建时压缩就不存在上面这些问题了，我们现在的很多项目都是spa的项目，即使不是也是需要构建工具打包什么的，那我们在这个过程中就最大限度地使用gzip压缩代码，让服务器直接使用不是很好吗，反正我们也不会天天打包生产版本的，哈哈。</p>
+<p>当然，这样服务端也得相应地更改配置来读取我们的压缩文件，会要麻烦一些，所以最终使用哪种压缩方式还得根据具有的哑无需求来，但是使用gzip压缩是很有必要的，毕竟效果是摆在那里的。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p> 在之前的一个vue单页面应用中我就遇到过打包之后文件还是太大的问题，当时经过各种分拆和异步组件之后首屏文件还是有一点大，我当时也想到了gzip，可当时的后台忽悠我说很麻烦，可我今天查了一下服务端压缩的话他们也不要加多少配置。所以啊，作为一个前端攻城狮服务端的知识多了解一下还是有必要的，可以防忽悠嘛，哈哈…</p>
+<p> 今天用<a href="https://webpack.css88.com/plugins/uglifyjs-webpack-plugin.html" target="_blank" rel="noopener">uglifyjs-webpack-plugin</a>这个插件配置代码压缩信息时才想起我们这个项目貌似木有使用gzip，于是乎从头了解了一下，所以记录一下。以后要多多利用起来！</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="https://segmentfault.com/a/1190000012800222#articleHeader0" target="_blank" rel="noopener">探索HTTP传输中gzip压缩的秘密</a></li>
+<li><a href="https://blog.csdn.net/clerk0324/article/details/51672933" target="_blank" rel="noopener">HTTP方式下的Gzip压缩传输</a></li>
+<li><a href="https://segmentfault.com/a/1190000015836090#articleHeader5" target="_blank" rel="noopener">webpack4 的生产环境优化</a></li>
+<li><a href="https://webpack.css88.com/plugins/compression-webpack-plugin.html" target="_blank" rel="noopener">compression-webpack-plugin插件文档</a></li>
+</ul>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/gzip/" rel="tag"># gzip</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/c9a6ab9.html" rel="next" title="第一个mpvue小程序开发总结">
+                <i class="fa fa-chevron-left"></i> 第一个mpvue小程序开发总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -442,8 +586,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -570,6 +723,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gzip压缩的好处"><span class="nav-number">2.</span> <span class="nav-text">gzip压缩的好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gzip压缩的过程"><span class="nav-number">3.</span> <span class="nav-text">gzip压缩的过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#谁来压缩"><span class="nav-number">4.</span> <span class="nav-text">谁来压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -703,6 +872,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
 
   
 
@@ -744,6 +917,30 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'wancheng7',
+            repo: 'wancheng7.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'f4c8c55f66809cf23a2cfd71a3fdbf208f84319c',
+            
+                client_id: '42389a91eca622eae137'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 
