@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[在npm上发布一个自己的包]]></title>
+    <url>%2Fpost%2Fb43e440c.html</url>
+    <content type="text"><![CDATA[准备工作首先，要在https://www.npmjs.com网站注册一个账号，具体过程就不说了，很简单。然后最重要的就是要准备好自己要发布的项目包。 发布 如果是一个新项目，就要先初始化一下 1$ npm init 跟着引导填写好相关信息即可 然后需在在本地添加npm用户, 填上对应的注册信息即可 1234$ npm adduserUsername: your namePassword: your passwordEmail: your email 发布 1$ npm publish 当执行npm publish 时，出现unauthorized 和 is not in the npm registry 1$ npm config set registry https://registry.npmjs.org/ 需要注意的是，替换完镜像之后要重新执行 npm adduser 、 npm publish 删除已发布的包 强制删除当前本机版本的包 1$ npm unpublish --force 删除指定版本的包 1$ npm unpublish guitest@1.0.1 //指定版本号 不过这个需要注意的是，在npm上自己有发布多个版本时可以删除任意版本，但只剩一个版本时就不能删除了，貌似是因为之前一个大牛把他的包删了结果导致很多依赖的包出问题了，所以官方更新了删除机制，只要在发布半小时之内没删除的，就不能彻底删除包了。 更新包更新的话也是运行publish，但是版本号必须要变动，不然是发布不成功的，在package.jason中修改version就可以发布新的版本了。 参考 发布npm包，删除npm包 如何开发一个npm包并发布 npm发布一个包 当执行npm publish 时，出现unauthorized 和 is not in the npm registry]]></content>
+      <tags>
+        <tag>npm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[微信小程序--登录流程梳理]]></title>
     <url>%2Fpost%2F50039207.html</url>
     <content type="text"><![CDATA[前言微信小程序凡是需要记录用户信息都需要登录，但是也有几种不同的登录方式，但是在小程序部分的登录流程是一样的。之前就朦朦胧胧地用之前项目的逻辑改改直接用了，这个新项目要用就又结合官方文档重新梳理了下，并记录一下，好记性不如烂笔头嘛，哈哈。 几种登录流程设计利用OpenId 创建新用户这种方式我的理解大体上就是一种静默登录，获取用户信息之后解密用户信息并通过OpenId直接创建新用户 利用Unionid 创建新用户这种方式的特点是可以利用Unionid实现多个小程序、公众号、已有登录体系的数据互通。 利用现有登录体系这是笔者目前在使用的一种登录方式，大体上是复用了现有的登录体系，授权获取个人信息之后输入手机号和验证码就能完成登录了，同时OpenId与个人信息都存在了我们自己的服务器。 几个核心API和核心字段 wx.login() 调用接口获取登录凭证（code） code2Session 登录凭证校验,为了获取会话秘钥session_key wx.checkSession() 检查登录态是否过期 wx.getSetting() 获取用户的当前设置 wx.getUserInfo 获取用户信息，获取之后需要解密数据 session_key 会话秘钥，是通过调用接口获取登录凭证获取的，是有时效性的 主要流程最后再附上一张官方文档上登录流程图 总结由于其他两种登录方式还没使用过，我单就使用过的利用现有登录体系这种方式总结一下。 当一个用户来使用我们的小程序时，在一个需要登录的页面，会经历以下几个步骤：tips: 由于最新的文档要求获取用户信息必须用户主动触发，不能开发者自动调取了，所以现在需要做个授权页面引导用户点击 参考 微信官方文档 InterviewMap–小程序]]></content>
