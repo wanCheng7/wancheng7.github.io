@@ -116,20 +116,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="万成">
-<meta property="og:url" content="http://wancheng7.github.io/archives/2018/07/index.html">
+  <meta name="description" content="灵魂三问 JS为什么是单线程的 我们都知道，JS是单线程的语言，那为什么呢？我的理解是JS设计之初就是为了在浏览器端完成DOM操作和一些简单交互的，既然涉及到DOM操作如果是多线程就会带来复杂的同步问题，比较极端的例子就是两个线程可能一个在删除某个DOM节点一个却在修改这个DOM节点，这是浏览器以哪个线程为准呢？   为什么需要异步 如果没有异步，单线程的JS从上到下执行遇到一段代码需要执行比较久">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我所理解的event loop">
+<meta property="og:url" content="http://wancheng7.github.io/post/5d54f45f.html">
 <meta property="og:site_name" content="万成">
+<meta property="og:description" content="灵魂三问 JS为什么是单线程的 我们都知道，JS是单线程的语言，那为什么呢？我的理解是JS设计之初就是为了在浏览器端完成DOM操作和一些简单交互的，既然涉及到DOM操作如果是多线程就会带来复杂的同步问题，比较极端的例子就是两个线程可能一个在删除某个DOM节点一个却在修改这个DOM节点，这是浏览器以哪个线程为准呢？   为什么需要异步 如果没有异步，单线程的JS从上到下执行遇到一段代码需要执行比较久">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-19T14:17:02.565Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="万成">
+<meta name="twitter:title" content="我所理解的event loop">
+<meta name="twitter:description" content="灵魂三问 JS为什么是单线程的 我们都知道，JS是单线程的语言，那为什么呢？我的理解是JS设计之初就是为了在浏览器端完成DOM操作和一些简单交互的，既然涉及到DOM操作如果是多线程就会带来复杂的同步问题，比较极端的例子就是两个线程可能一个在删除某个DOM节点一个却在修改这个DOM节点，这是浏览器以哪个线程为准呢？   为什么需要异步 如果没有异步，单线程的JS从上到下执行遇到一段代码需要执行比较久">
 
 
 
 
 
 
-  <link rel="canonical" href="http://wancheng7.github.io/archives/2018/07/"/>
+  <link rel="canonical" href="http://wancheng7.github.io/post/5d54f45f.html"/>
 
 
 
@@ -139,7 +144,7 @@
   };
 </script>
 
-  <title>归档 | 万成</title>
+  <title>我所理解的event loop | 万成</title>
   
 
 
@@ -186,7 +191,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <a href="https://github.com/wancheng7"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
@@ -342,117 +347,263 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 22 篇日志。 继续努力。
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wancheng7.github.io/post/5d54f45f.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="万成">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="万成">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/post/5590b762.html" itemprop="url">
-              
-                <span itemprop="name">移动web开发适配方案之Rem</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">我所理解的event loop</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-25T23:34:47+08:00"
-              content="2018-07-25" >
-          07-25
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-19T22:10:18+08:00">2018-12-19</time>
+            
 
-    </header>
-  </article>
+            
+            
 
+            
+          </span>
 
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/post/5d54f45f.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论：</span> <span class="post-comments-count gitment-comments-count" data-xid="/post/5d54f45f.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/ad7f4826.html" itemprop="url">
-              
-                <span itemprop="name">探究JS中对象的深拷贝和浅拷贝</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-04T23:38:35+08:00"
-              content="2018-07-04" >
-          07-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h3 id="灵魂三问"><a href="#灵魂三问" class="headerlink" title="灵魂三问"></a>灵魂三问</h3><ul>
+<li>JS为什么是单线程的<ul>
+<li>我们都知道，JS是单线程的语言，那为什么呢？我的理解是JS设计之初就是为了在浏览器端完成DOM操作和一些简单交互的，既然涉及到DOM操作如果是多线程就会带来复杂的同步问题，比较极端的例子就是两个线程可能一个在删除某个DOM节点一个却在修改这个DOM节点，这是浏览器以哪个线程为准呢？</li>
+</ul>
+</li>
+<li>为什么需要异步<ul>
+<li>如果没有异步，单线程的JS从上到下执行遇到一段代码需要执行比较久时就会阻塞页面的渲染，造成页面假死，这显然是一种很差的用户体验 </li>
+</ul>
+</li>
+<li>单线程又是如何实现异步的呢<ul>
+<li>单线程之所以能实现异步是因为在处理异步任务时并不是马上运行的，而是通过一个事件循环(event loop)机制来管理任务的执行。貌似是浏览器提供了这么一个管理任务的event loop线程，它来管理和负责向我们的主线程上输送需要执行的任务。所以理解了event loop的机制才能更好地理解JS的运行机制，理解JS的运行机制才能更准确地把握我们代码的运行规律。</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h3 id="由一个面试题引发的思考"><a href="#由一个面试题引发的思考" class="headerlink" title="由一个面试题引发的思考"></a>由一个面试题引发的思考</h3><p>首先来看一道考察JS执行机制的面试题，原题是今日头条的前端面试题，我稍微进行了一点改造：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">async function async1() &#123;</span><br><span class="line">  console.log( &apos;async1 start&apos; )</span><br><span class="line">  await async2()</span><br><span class="line">  console.log( &apos;async1 end&apos; )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">async function async2() &#123;</span><br><span class="line">  new Promise( function ( resolve ) &#123;</span><br><span class="line">    console.log( &apos;11&apos; )</span><br><span class="line">    resolve();</span><br><span class="line">  &#125;).then( function () &#123;</span><br><span class="line">    console.log( &apos;22&apos; )</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log( &apos;script start&apos; )</span><br><span class="line"></span><br><span class="line">setTimeout( function () &#123;</span><br><span class="line">  console.log( &apos;setTimeout&apos; )</span><br><span class="line">&#125;, 0 )</span><br><span class="line"></span><br><span class="line">async1();</span><br><span class="line"></span><br><span class="line">new Promise( function ( resolve ) &#123;</span><br><span class="line">  console.log( &apos;promise1&apos; )</span><br><span class="line">  resolve();</span><br><span class="line">&#125;).then( function () &#123;</span><br><span class="line">  console.log( &apos;promise2&apos; )</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log( &apos;script end&apos; )</span><br></pre></td></tr></table></figure></p>
+<p>看完之后如果不在浏览器端运行一下你能有自己的答案吗，并且能自圆其说吗？得到答案都不难，放在浏览器里自然就有了输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">script start</span><br><span class="line">async1 start</span><br><span class="line">11</span><br><span class="line">promise1</span><br><span class="line">script end</span><br><span class="line">22</span><br><span class="line">promise2</span><br><span class="line">async1 end</span><br><span class="line">setTimeout</span><br></pre></td></tr></table></figure></p>
+<p>因为题目是千变万化的，日常开发中的情况也是多种多样的，正确理解了其中的执行规律才能更好地开发，当然如果你得到的结果是一样的并且能够自圆其说那也就没必要看下去了，如果你还对这个结果有点懵那就听听我的理解吧。</p>
+<h3 id="微任务与宏任务"><a href="#微任务与宏任务" class="headerlink" title="微任务与宏任务"></a>微任务与宏任务</h3><p>事实上，我们的JS代码用同步和异步这两种划分方式来决定执行的先后顺序显然是不够的，从而有了另一种划分方式，具体谁提出来的我就没考证了，大体上大家是这样分的：</p>
+<ul>
+<li>macro-task(宏任务)：整体代码script，setTimeout，setInterval</li>
+<li>micro-task(微任务)：Promise的then回调，process.nextTick(Node)</li>
+</ul>
+<p>因为我们上面的面试题是前端面试题，所以我们讨论的都是浏览器环境下的表现，node环境下的event loop貌似有些不一样，这里就不讨论了。</p>
+<h3 id="event-loop的运行机制"><a href="#event-loop的运行机制" class="headerlink" title="event loop的运行机制"></a>event loop的运行机制</h3><p>既然前端谈到了JS是单线程的，同时只能处理一个任务，而我们又将各种各样的任务分为了宏任务和微任务，那到底哪种任务先执行了，这个运行逻辑就是event loop的判断逻辑。</p>
+<p>先说说我的理解，再来印证上面代码的运行顺序：</p>
+<ul>
+<li>一段代码执行时先执行宏任务中的同步代码</li>
+<li>如果遇到像setTimeout这类宏任务就会把代码方式【宏任务队列】中</li>
+<li>如果遇到像Promise.then()这类微任务会放入【微任务队列】</li>
+<li>在本轮宏任务中的同步代码执行完之后就会依次执行本轮微任务队列中的代码，然后执行下一轮中的宏任务代码</li>
+</ul>
+<p>说回上面的面试题，我们模拟event loop来首先给他们归个队</p>
+<ul>
+<li>首先遇到了console.log( ‘script start’ )，直接打印</li>
+<li>然后遇到了setTimeout这个宏任务，就被推到宏任务队列中</li>
+<li>然后是async1()，直接打印同步代码console.log( ‘async1 start’ )</li>
+<li>关于await async2()，实际上是从右到左先执行了async2()里的代码，然后遇到await从而交出线程的控制权的，async2()执行之后先打印了11，console.log( ‘22’ )被推入了微任务队列</li>
+<li>接着执行Promise中的同步代码console.log( ‘promise1’ )，然后将console.log( ‘promise2’ )推入微任务队列</li>
+<li>接着打印同步代码console.log( ‘script end’ )，到此，所有同步代码执行完毕</li>
+<li>接下来就要执行本轮代码中的微任务队列了，所以先打印22，再打印promise2</li>
+<li>至此，await等待的async2()执行完了，可以执行await下面的代码了，所以接下来打印async1 end</li>
+<li>最后，就是执行下一轮event loop中的宏任务setTimeout，最后打印setTimeout</li>
+</ul>
+<h3 id="单独说一下async和await"><a href="#单独说一下async和await" class="headerlink" title="单独说一下async和await"></a>单独说一下async和await</h3><p>async本质上是加上了Generator函数并且内置了执行器的一个语法糖，并且async函数返回的是Promise对象。唯一需要注意的是await后面无论接的是同步代码还是异步代码都要等他们执行完毕才能执行await结果之后的代码。并且经过验证，当遇到await语句时是从右到左先执行的await后面的代码，然后才交出线程的控制权直到await等待的结果运行完毕。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总体上，算是能对上面那个题目的执行过程有了一个能自圆其说的解释，只是吧，为什么规则是这样的呢？这些规则怎么证伪呢？这是我查资料的时候最纠结的问题。后来跟同事交流了之后吧，觉得也没必要纠结，毕竟最终的解释器是C写的，不懂规则可以去看源码啊，可是我看不懂啊，哈哈。。。所以，既然大家大部分人都是这么说，也能说得通，暂且先记着吧，至少，还是能够解释日常中形形色色代码的运行规律的。</p>
+<p>看了几篇不同观点的文章之后重新梳理一下event loop的顺序：</p>
+<ul>
+<li>先执行宏任务中的同步代码</li>
+<li>执行栈清空之后查询任务队列</li>
+<li>如果任务队列中有微任务，先执行</li>
+<li>执行完了微任务之后开始下一轮event loop，执行队列中宏任务的异步代码</li>
+</ul>
+<p>参考文章中有几篇文章比我讲的生动一些，没看懂的可以参考一下，我主要是梳理一下自己的理解，有不同想法的欢迎交流。</p>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>
+<li><a href="https://www.cnblogs.com/jiasm/p/9482443.html" target="_blank" rel="noopener">微任务、宏任务与Event-Loop</a></li>
+<li><a href="https://segmentfault.com/a/1190000017224799#articleHeader6" target="_blank" rel="noopener">8张图帮你一步步看清 async/await 和 promise 的执行顺序</a></li>
+<li><a href="https://segmentfault.com/a/1190000012806637" target="_blank" rel="noopener">10分钟理解JS引擎的执行机制</a></li>
+<li><a href="https://segmentfault.com/a/1190000007535316#articleHeader7" target="_blank" rel="noopener">理解 JavaScript 的async/await</a></li>
+<li><a href="https://blog.csdn.net/w2765006513/article/details/53743051" target="_blank" rel="noopener">浅谈js运行机制(线程）</a></li>
+<li><a href="https://segmentfault.com/a/1190000013702430#articleHeader2" target="_blank" rel="noopener">从setTimeout-setInterval看JS线程</a></li>
+</ul>
+
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/b43e440c.html" rel="next" title="在npm上发布一个自己的包">
+                <i class="fa fa-chevron-left"></i> 在npm上发布一个自己的包
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -473,8 +624,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -610,6 +770,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#灵魂三问"><span class="nav-number">1.</span> <span class="nav-text">灵魂三问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#由一个面试题引发的思考"><span class="nav-number">2.</span> <span class="nav-text">由一个面试题引发的思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微任务与宏任务"><span class="nav-number">3.</span> <span class="nav-text">微任务与宏任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#event-loop的运行机制"><span class="nav-number">4.</span> <span class="nav-text">event loop的运行机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单独说一下async和await"><span class="nav-number">5.</span> <span class="nav-text">单独说一下async和await</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文章"><span class="nav-number">7.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -742,6 +918,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
 
   
 
@@ -783,6 +963,30 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'wancheng7',
+            repo: 'wancheng7.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'f4c8c55f66809cf23a2cfd71a3fdbf208f84319c',
+            
+                client_id: '42389a91eca622eae137'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 

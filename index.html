@@ -359,6 +359,147 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wancheng7.github.io/post/5d54f45f.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="万成">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="万成">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/5d54f45f.html" itemprop="url">我所理解的event loop</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-19T22:10:18+08:00">2018-12-19</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="灵魂三问"><a href="#灵魂三问" class="headerlink" title="灵魂三问"></a>灵魂三问</h3><ul>
+<li>JS为什么是单线程的<ul>
+<li>我们都知道，JS是单线程的语言，那为什么呢？我的理解是JS设计之初就是为了在浏览器端完成DOM操作和一些简单交互的，既然涉及到DOM操作如果是多线程就会带来复杂的同步问题，比较极端的例子就是两个线程可能一个在删除某个DOM节点一个却在修改这个DOM节点，这是浏览器以哪个线程为准呢？</li>
+</ul>
+</li>
+<li>为什么需要异步<ul>
+<li>如果没有异步，单线程的JS从上到下执行遇到一段代码需要执行比较久时就会阻塞页面的渲染，造成页面假死，这显然是一种很差的用户体验 </li>
+</ul>
+</li>
+<li>单线程又是如何实现异步的呢<ul>
+<li>单线程之所以能实现异步是因为在处理异步任务时并不是马上运行的，而是通过一个事件循环(event loop)机制来管理任务的执行。貌似是浏览器提供了这么一个管理任务的event loop线程，它来管理和负责向我们的主线程上输送需要执行的任务。所以理解了event loop的机制才能更好地理解JS的运行机制，理解JS的运行机制才能更准确地把握我们代码的运行规律。</li>
+</ul>
+</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/5d54f45f.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://wancheng7.github.io/post/b43e440c.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1536,152 +1677,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wancheng7.github.io/post/a22d4e29.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="万成">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/blog-logo.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="万成">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/a22d4e29.html" itemprop="url">《BAT前端进阶[师徒班]》学习总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-03T22:33:50+08:00">2018-06-03</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="这是一个培训课"><a href="#这是一个培训课" class="headerlink" title="这是一个培训课"></a>这是一个培训课</h4><p>是的，这是一个面向中级前端的培训班，但明显跟传统的填鸭式培训班不太一样。这边的老师都是大牛这是毫无疑问的，而且都是一线开发人员。而且课程一开始就说明了面向了是有1-3年有工作经验的前端，所以课程难度还是有些的，信息量也很大，需要自己充分消化吸收。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/post/a22d4e29.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1733,7 +1728,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1807,7 +1802,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
