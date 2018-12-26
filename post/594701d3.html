@@ -116,25 +116,24 @@
 
 
 
-  <meta name="description" content="主要参考了以下两篇文章：  使用Hexo+Github一步步搭建属于自己的博客（基础）：https://www.cnblogs.com/fengxiongZz/p/7707219.html 使用Hexo+Github一步步搭建属于自己的博客（进阶）：http://www.cnblogs.com/fengxiongZz/p/7707568.html 手把手教你用Hexo+Github搭建属于自己的博">
-<meta name="keywords" content="填坑记录">
+  <meta name="description" content="前言说到import和require，大家平时开发中一定不少见，尤其是需要前端工程化的项目现在都已经离不开node了，在node环境下这两者都是大量存在的，大体上来说他们都是为了实现JS代码的模块化，那为什么会出现两种方案呢，又有什么不同呢？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用hexo从零开始在githubpage上搭建自己的个人博客">
-<meta property="og:url" content="http://wancheng7.github.io/post/6af8e2ee.html">
+<meta property="og:title" content="ES6学习笔记（二）—— 通过ES6 Module看import和require区别">
+<meta property="og:url" content="http://wancheng7.github.io/post/594701d3.html">
 <meta property="og:site_name" content="万成">
-<meta property="og:description" content="主要参考了以下两篇文章：  使用Hexo+Github一步步搭建属于自己的博客（基础）：https://www.cnblogs.com/fengxiongZz/p/7707219.html 使用Hexo+Github一步步搭建属于自己的博客（进阶）：http://www.cnblogs.com/fengxiongZz/p/7707568.html 手把手教你用Hexo+Github搭建属于自己的博">
+<meta property="og:description" content="前言说到import和require，大家平时开发中一定不少见，尤其是需要前端工程化的项目现在都已经离不开node了，在node环境下这两者都是大量存在的，大体上来说他们都是为了实现JS代码的模块化，那为什么会出现两种方案呢，又有什么不同呢？">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-24T16:09:41.396Z">
+<meta property="og:updated_time" content="2018-12-26T14:06:23.967Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用hexo从零开始在githubpage上搭建自己的个人博客">
-<meta name="twitter:description" content="主要参考了以下两篇文章：  使用Hexo+Github一步步搭建属于自己的博客（基础）：https://www.cnblogs.com/fengxiongZz/p/7707219.html 使用Hexo+Github一步步搭建属于自己的博客（进阶）：http://www.cnblogs.com/fengxiongZz/p/7707568.html 手把手教你用Hexo+Github搭建属于自己的博">
+<meta name="twitter:title" content="ES6学习笔记（二）—— 通过ES6 Module看import和require区别">
+<meta name="twitter:description" content="前言说到import和require，大家平时开发中一定不少见，尤其是需要前端工程化的项目现在都已经离不开node了，在node环境下这两者都是大量存在的，大体上来说他们都是为了实现JS代码的模块化，那为什么会出现两种方案呢，又有什么不同呢？">
 
 
 
 
 
 
-  <link rel="canonical" href="http://wancheng7.github.io/post/6af8e2ee.html">
+  <link rel="canonical" href="http://wancheng7.github.io/post/594701d3.html">
 
 
 
@@ -144,7 +143,7 @@
   };
 </script>
 
-  <title>用hexo从零开始在githubpage上搭建自己的个人博客 | 万成</title>
+  <title>ES6学习笔记（二）—— 通过ES6 Module看import和require区别 | 万成</title>
   
 
 
@@ -361,7 +360,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wancheng7.github.io/post/6af8e2ee.html">
+    <link itemprop="mainEntityOfPage" href="http://wancheng7.github.io/post/594701d3.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="万成">
@@ -378,7 +377,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">用hexo从零开始在githubpage上搭建自己的个人博客</h1>
+          <h1 class="post-title" itemprop="name headline">ES6学习笔记（二）—— 通过ES6 Module看import和require区别</h1>
         
 
         <div class="post-meta">
@@ -390,7 +389,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-06T22:34:57+08:00">2018-03-06</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-26T22:03:40+08:00">2018-12-26</time>
             
 
             
@@ -400,24 +399,6 @@
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -426,8 +407,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/post/6af8e2ee.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论：</span> <span class="post-comments-count gitment-comments-count" data-xid="/post/6af8e2ee.html" itemprop="commentsCount"></span>
+                <a href="/post/594701d3.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论：</span> <span class="post-comments-count gitment-comments-count" data-xid="/post/594701d3.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -455,11 +436,54 @@
       
 
       
-        <p>主要参考了以下两篇文章：</p>
-<ul>
-<li>使用Hexo+Github一步步搭建属于自己的博客（基础）：<a href="https://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">https://www.cnblogs.com/fengxiongZz/p/7707219.html</a></li>
-<li>使用Hexo+Github一步步搭建属于自己的博客（进阶）：<a href="http://www.cnblogs.com/fengxiongZz/p/7707568.html" target="_blank" rel="noopener">http://www.cnblogs.com/fengxiongZz/p/7707568.html</a></li>
-<li>手把手教你用Hexo+Github搭建属于自己的博客(详细图文)：<a href="http://www.jb51.net/article/125152.htm" target="_blank" rel="noopener">http://www.jb51.net/article/125152.htm</a></li>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>说到import和require，大家平时开发中一定不少见，尤其是需要前端工程化的项目现在都已经离不开node了，在node环境下这两者都是大量存在的，大体上来说他们都是为了实现JS代码的模块化，那为什么会出现两种方案呢，又有什么不同呢？</p>
+<a id="more"></a>
+<h3 id="模块化的不同解决方案"><a href="#模块化的不同解决方案" class="headerlink" title="模块化的不同解决方案"></a>模块化的不同解决方案</h3><p>追根溯源，JS这门脚本语言设计伊始就是没有模块化的，所以早期的全局变量容易造成命名冲突。但随着web项目越来越大，JS的代码量也与日俱增，于是社区就自发约定了几种模块化的方案：requirejs遵循AMD，seajs遵循CMD，node的module遵循CommonJS规范，虽然写法上有所不同，都是为了能够间接实现模块化的基础上保持较为一致的代码风格。</p>
+<p>随着ES2015的发布，官方标准定义了一种模块化的方案，那就是import、export。可是，标准毕竟是标准，各大浏览器和node终端要实现标准还是有一段距离的，目前来说都2018年了主流浏览器都还没实现，还得依赖转换工具（例如babel）转为ES5的代码之后浏览器才能解析。所以这也就解释了为什么我们的工程化代码中nodeJS遵循的CommonJS规范和ES6的模块化方案并存的现象。</p>
+<h3 id="两者的区别"><a href="#两者的区别" class="headerlink" title="两者的区别"></a>两者的区别</h3><ul>
+<li>import是ES6标准中的模块化解决方案，require是node中遵循CommonJS规范的模块化解决方案</li>
+<li>后者支持动态引入，也就是require(${path}/xx.js)，前者目前不支持，但是已有提案</li>
+<li>前者是关键词，后者不是</li>
+<li>前者是编译时加载，必须放在模块顶部，在性能上会比后者好一些，后者是运行时加载，理论上来说放在哪里都可以</li>
+<li>前者采用的是实时绑定方式，即导入和导出的值都指向同一个内存地址，所以导入值会随着导出值变化。而后者在导出时是指拷贝，就算导出的值变化了，导入的值也不会变化，如果想要更新值就要重新导入</li>
+<li>前者会编译成require/exports来执行</li>
+</ul>
+<h3 id="用法上的区别"><a href="#用法上的区别" class="headerlink" title="用法上的区别"></a>用法上的区别</h3><h4 id="import导入模块"><a href="#import导入模块" class="headerlink" title="import导入模块"></a>import导入模块</h4><ul>
+<li><p>导入模块根据模块导出时的写法有不同写法，具体可以参考<a href="http://es6.ruanyifeng.com/#docs/module#export-%E5%91%BD%E4%BB%A4" target="_blank" rel="noopener">这里</a>，如果模块是普通导出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">   // test.js</span><br><span class="line">   var firstName = &apos;Michael&apos;;</span><br><span class="line">   var lastName = &apos;Jackson&apos;;</span><br><span class="line">   var year = 1958;</span><br><span class="line">   export &#123;firstName, lastName, year&#125;;</span><br><span class="line">   // demo.js</span><br><span class="line">   import &#123; firstName &#125; from &apos;./test.js&apos;</span><br><span class="line">   console.log(firstName);  // &apos;Michael&apos;</span><br><span class="line">   import * as test from &apos;./test.js&apos;</span><br><span class="line">   console.log(test);  //Module&#123;&#125;   所有内容</span><br><span class="line">   import &#123; firstName as key, lastName as value &#125; from &apos;./test.js&apos;</span><br><span class="line">console.log(key + &apos;--&apos; + value);  // Michael--Jackson</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>带有默认值时，也是我们日常开发中常用的方式:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// test.js</span><br><span class="line">var firstName = &apos;Michael&apos;;</span><br><span class="line">var lastName = &apos;Jackson&apos;;</span><br><span class="line">var year = 1958;</span><br><span class="line">export default &#123; firstName, lastName, year &#125;;</span><br><span class="line">// demo.js</span><br><span class="line">import test from &apos;./test.js&apos;</span><br><span class="line">console.log(test); // &#123;firstName: &quot;Michael&quot;, lastName: &quot;Jackson&quot;, year: 1958&#125;</span><br></pre></td></tr></table></figure>
+<p>实际上这个default就是一个语法糖，只不过defaul是一个关键字，在这里等同于</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#123; default as test &#125; from &apos;./test.js&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>特别注意的是，export命令规定的是对外的接口，必须与模块内部的变量建立一一对应关系。可以理解为export导出的是一种引用关系而不是一个具体的值，它们的实质是，在接口名与模块内部变量之间，建立了一一对应的关系，例如下面这样就会报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export 1;</span><br><span class="line">var m = 1;</span><br><span class="line">export m;</span><br></pre></td></tr></table></figure>
+<p>但是改为用花括号包起来变成对象之后就成了输出引用关系就可以正常导出了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var m = 1;</span><br><span class="line">export &#123; m &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="require导入模块"><a href="#require导入模块" class="headerlink" title="require导入模块"></a>require导入模块</h4><ul>
+<li><p>require导入模块就没那么复杂了，导出时是什么样，导入时就还是什么样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// test.js</span><br><span class="line">var firstName = &apos;Michael&apos;;</span><br><span class="line">var lastName = &apos;Jackson&apos;;</span><br><span class="line">var year = 1958;</span><br><span class="line">module.exports = &#123; firstName, lastName, year &#125;;</span><br><span class="line">// demo.js</span><br><span class="line">const test = require(&apos;./test.js&apos;);</span><br><span class="line">console.log(test); // &#123;firstName: &quot;Michael&quot;, lastName: &quot;Jackson&quot;, year: 1958&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>还有一种不常用的用法，直接导出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// test.js</span><br><span class="line">var year = 1958;</span><br><span class="line">exports.year = year;</span><br><span class="line">// demo.js</span><br><span class="line">const test = require(&apos;./test.js&apos;);</span><br><span class="line">console.log(test);  // &#123;year: 1958&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>需要注意的是，module.exports导出之后，后面的代码就对导出的模块无效了，例如上例中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// test.js</span><br><span class="line">module.exports = &#123; firstName, lastName, year &#125;;</span><br><span class="line">exports.name = &apos;222&apos;;</span><br><span class="line">// demo.js</span><br><span class="line">const test = require(&apos;./test.js&apos;);</span><br><span class="line">console.log(test);  // &#123;firstName: &quot;Michael&quot;, lastName: &quot;Jackson&quot;, year: 1958&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>特别说明一下，由于require是可以在任意地方引入的，所以，我们在开发中用~引入图片的方式实际上等效于require:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;~assets/img/icon/red_logo.png&quot; class=&quot;logo&quot; alt=&quot;&quot;&gt;</span><br><span class="line">//等效于</span><br><span class="line">&lt;img :src=&quot;require(&apos;assets/img/icon/red_logo.png&apos;)&quot; class=&quot;logo&quot; alt=&quot;&quot;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>import和require就是两种不同的JS模块化实现方式而已，由于之前npm生态的很多包都是基础CommonJS规范写的，所以相当一段时间之内必然是import和require这两种模块引入方式共存的。</p>
+<p>总体来说时代总是发展的，ES6作为语言规范是迟早会被各大主流浏览器支持的，不然也就称不上主流浏览器了。所以为了长远考虑，我们还是尽量使用ES6的import来引入模块，等以后浏览器支持了我们也就可以少改一些代码了。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="http://es6.ruanyifeng.com/#docs/module#export-%E5%91%BD%E4%BB%A4" target="_blank" rel="noopener">阮一峰ES6-export命令</a></li>
+<li><a href="http://imweb.io/topic/582293894067ce9726778be9" target="_blank" rel="noopener">Node中没搞明白require和import，你会被坑的很惨</a></li>
+<li><a href="https://juejin.im/post/5b0685c151882538a808aded" target="_blank" rel="noopener">require 和 import 的区别？</a></li>
+<li><a href="https://segmentfault.com/a/1190000014434944" target="_blank" rel="noopener">require和import的区别是什么？看这个你就懂了</a></li>
 </ul>
 
       
@@ -479,12 +503,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/填坑记录/" rel="tag"># 填坑记录</a>
-          
-        </div>
-      
 
       
       
@@ -494,8 +512,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/5f818014.html" rel="next" title="Hexo 折腾记录">
-                <i class="fa fa-chevron-left"></i> Hexo 折腾记录
+              <a href="/post/5d54f45f.html" rel="next" title="我所理解的event loop">
+                <i class="fa fa-chevron-left"></i> 我所理解的event loop
               </a>
             
           </div>
@@ -503,10 +521,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/post/e384a99a.html" rel="prev" title="利用popstate事件和window下的history对象处理浏览器跳转问题">
-                利用popstate事件和window下的history对象处理浏览器跳转问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -588,8 +602,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -722,6 +745,22 @@ var jiathis_config={
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块化的不同解决方案"><span class="nav-number">2.</span> <span class="nav-text">模块化的不同解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两者的区别"><span class="nav-number">3.</span> <span class="nav-text">两者的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法上的区别"><span class="nav-number">4.</span> <span class="nav-text">用法上的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#import导入模块"><span class="nav-number">4.1.</span> <span class="nav-text">import导入模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#require导入模块"><span class="nav-number">4.2.</span> <span class="nav-text">require导入模块</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
