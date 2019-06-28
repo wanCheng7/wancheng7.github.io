@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[通过 Fiddler 抓包调试移动端项目]]></title>
+    <url>%2Fpost%2Fe105a76b.html</url>
+    <content type="text"><![CDATA[需要抓包调试的场景作为一名web开发人员，大部分的项目都能在浏览器或者web开发工具中调试从而定位问题，可是对于一些在app中内嵌的h5页面调试起来就没那么方便了，尤其是对于线上的问题，这个时候功能丰富的 Fiddler 就该派上用场了。 Fiddler 抓包 首先打开Fiddler 软件，开启Fiddler的远程连接，Fiddler 主菜单 Tools -&gt; Fiddler Options…-&gt; Connections页签，选中Allowremote computers to connect。效果图如下： 接下来就是设置手机端了，安卓和ios都大同小异，抓包的前提是手机和PC处在同一个局域网，一般来说手机连接局域网的wifi就好了，如果wifi信号较弱可以考虑在自己电脑上共享处一个wifi 进入手机的wifi设置，以ios为例，进入无线局域网 -&gt; 局域网内的wifi，点击右边的感叹号，效果如图 然后点击配置代理，填写本机IP和Fiddler 的端口号8888 点击保存之后，在手机浏览器上访问一个网站试试，Fiddler 上就能看到相关请求了，这是我用手机访问百度之后的请求截图： 需要特别说明的是，在手机初次连接 Fiddler 时要在手机端安装证书，操作步骤： 例如我的本机ip是192.168.60.147，那就在手机的safari浏览器里输入92.168.60.147:8888，然后点击最下方的这个链接下载证书：2.下载完证书之后还要在设置信任证书：设置 -&gt; 通用 -&gt; 关于本机 -&gt; 证书信任设置，找到这个DO_NOT_TRUST_FiddlerRoot，勾选上 现在，我们在手机上访问的所有请求都能在电脑上的 Fiddler 里看到并设置拦截和一些过滤、替换操作了。 调试本地h5项目1.因为我们手机和电脑都在一个局域网之后，通过手机直接输入本地ip加上端口和项目链接是能够直接访问我们本地启动的localhost服务的，可是为了开发时共享一些登录态和解决跨域问题，我们本地开发时经常会用到host代理和Nginx代理，这时候就需要 Fiddler 上也做一个host代理。 2.这是要打开 Fiddler -&gt; Tools -&gt; Host Remapping，就类似于我们本地的host代理，但是因为我们所有的手机端的请求都被 Fiddler 代理了，所以会先走它的host解析，例如我的配置如下： 3.这个时候我在手机端访问webapp.leke.cn，就会先走 Fiddler 的host代理解析到127.0.0.1，然后才会根据我PC端的本地host去解析。这样做了之后，我们PC端预览的h5页面的地址就完全可以复制粘贴到手机端运行了。尤其是对于内嵌在app里面的h5页面，当一些真机才能复现的问题时，这样调试会非常方便，就不用重复发包了。 尾巴还安利一个 Filddler 的小功能，文件代理，这个可以本地的某个文件去代替线上的某个对应的文件去执行，用于定位一些线上的问题不用发包就能调试，非常有用，当前对于构建过的带hash的项目可能麻烦一点，但对于一些JQ时代的老项目还是偶尔能派上用场的。Filddler 功能还是蛮多的，我也还只了解了一丢丢，有待发掘。 参考： Fiddler抓取http请求（web/手机/移动端） Fiddler抓包工具使用指南|手机安装Fiddler的安全证书]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Fiddler</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JavaScript运算符：递增递减运算符前置和后置的区别]]></title>
     <url>%2Fpost%2Fa0367843.html</url>
     <content type="text"><![CDATA[从两段代码说起12345var num1 = 2;var num2 = 20;var num3 = --num1 + num2;var num4 = num1 + num2;console.log(num1 +&apos;-&apos; + num2 +&apos;-&apos;+ num3 +&apos;-&apos; + num4) 将四个数分别打印是多少？ 12345var num1 = 2;var num2 = 20;var num3 = num1-- + num2;var num4 = num1 + num2;console.log(num1 +&apos;-&apos; + num2 +&apos;-&apos;+ num3 +&apos;-&apos; + num4) 这段代码运行之后将四个数分别打印又是多少？ 如果你能果断地说出答案并且能自圆其说，那也就没必要继续看下去了。 递增运算符和递减运算符我们都知道，JavaScript中的递增运算符是 ++，递减运算符是 –。简单来说，递增运算符就是将变量+1，递减运算符就是让变量-1，可是前置和后置结果是不一样的，也是很容易混淆的。 前置型递增（递减）前置型简单理解就是先计算再赋值。例如1234var a = 1;var b = ++a;console.log(a); //2console.log(b); //2 上面的表达式也可以理解为：123var a = 1;a = a + 1;var b = a; 后置型递增（递减）后置型简单理解就是先赋值再计算。例如1234var a = 1;var b = a++;console.log(a); //2console.log(b); //1 上面的表达式也可以理解为：1234var a = 1;var i = a;a = a + 1;var b = i; 原理前置和后置型运算符之所以有上面的区别，是因为运算符的优先级。在各运算符按照优先级的不同由高到低排列顺序中： 后置型递增（递减）运算符的优先级是17 前置型递增（递减）运算符的优先级是16 赋值运算符=的优先级是3 所以，++和–会优先于=执行。但是这边我自己也还有个疑问，前置型的还可以用优先级解释，但是后置型的怎么解释呢，讲道理它也比=的优先级高啊，这个我还有点疑问。 然后根据MDN上对递增（++）的解释): 如果后置（postfix）使用，即运算符位于操作数的后面（如 x++），那么将会在递增前返回数值。 如果前置（prefix）使用，即运算符位于操作数的前面（如 ++x），那么将会在递增后返回数值。 根据这个解释，在例子中12var a = 1;console.log(a++) //1 a++实际上是等于a递增之前的数值的，也就是1，这个在开发中容易被忽略，要谨记。 总结回到最上面的代码，第一段代码分别会打印：1-20-21-21，第二段代码会打印：1-20-22-21 我们开发中需要记住的是：前置型是先计算再返回数值，后置型是先返回数值再计算。 参考文章 js中i++与++i的区别 JavaScript运算符：递增和递减]]></content>
