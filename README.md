@@ -23,6 +23,10 @@
 ### CSS
 - [CSS3动画和JS动画的比较](https://wancheng7.github.io/post/6707751a.html)
 
+### React
+- [React生命周期简单梳理](https://wancheng7.github.io/post/33cf40df.html)
+- [create-react-app v3中配置按需加载组件和添加less支持修改主题样式](https://wancheng7.github.io/post/e0c50683.html)
+
 ### Vue
 - [浅析使用vue-router实现前端路由的两种方式](https://wancheng7.github.io/post/2f3d2375.html)
 
