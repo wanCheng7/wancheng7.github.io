@@ -113,25 +113,31 @@
 
 
 
-  <meta name="description" content="什么是分组通俗来说，我理解的分组就是在正则表达式中用（）包起来的内容代表了一个分组，像这样的：12var reg = /(\d&amp;#123;2&amp;#125;)/reg.test(&amp;apos;12&amp;apos;);  //true 这里reg中的(/d{2})就表示一个分组，匹配两位数字">
-<meta name="keywords" content="正则">
+  <meta name="description" content="防抖（debounce） 概念：防抖（在事件被触发n秒之后再执行回调函数，如果在这n秒内又被触发，则重新计时）">
+<meta name="keywords" content="性能优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS正则表达式的分组匹配">
-<meta property="og:url" content="http://wancheng7.github.io/post/41ca68e.html">
+<meta property="og:title" content="我理解的函数防抖和节流">
+<meta property="og:url" content="http://wancheng7.github.io/post/5e6ffd2b.html">
 <meta property="og:site_name" content="西风瘦码">
-<meta property="og:description" content="什么是分组通俗来说，我理解的分组就是在正则表达式中用（）包起来的内容代表了一个分组，像这样的：12var reg = /(\d&amp;#123;2&amp;#125;)/reg.test(&amp;apos;12&amp;apos;);  //true 这里reg中的(/d{2})就表示一个分组，匹配两位数字">
+<meta property="og:description" content="防抖（debounce） 概念：防抖（在事件被触发n秒之后再执行回调函数，如果在这n秒内又被触发，则重新计时）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-24T16:09:41.391Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/wanCheng7/wancheng7.github.io/master/images/blog/noDebounce.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/wanCheng7/wancheng7.github.io/master/images/blog/debounce_1.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/wanCheng7/wancheng7.github.io/master/images/blog/debounce_2.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/wanCheng7/wancheng7.github.io/master/images/blog/throttle_1.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/wanCheng7/wancheng7.github.io/master/images/blog/throttle_2.gif">
+<meta property="og:updated_time" content="2019-07-22T12:43:54.137Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS正则表达式的分组匹配">
-<meta name="twitter:description" content="什么是分组通俗来说，我理解的分组就是在正则表达式中用（）包起来的内容代表了一个分组，像这样的：12var reg = /(\d&amp;#123;2&amp;#125;)/reg.test(&amp;apos;12&amp;apos;);  //true 这里reg中的(/d{2})就表示一个分组，匹配两位数字">
+<meta name="twitter:title" content="我理解的函数防抖和节流">
+<meta name="twitter:description" content="防抖（debounce） 概念：防抖（在事件被触发n秒之后再执行回调函数，如果在这n秒内又被触发，则重新计时）">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wanCheng7/wancheng7.github.io/master/images/blog/noDebounce.gif">
 
 
 
 
 
 
-  <link rel="canonical" href="http://wancheng7.github.io/post/41ca68e.html">
+  <link rel="canonical" href="http://wancheng7.github.io/post/5e6ffd2b.html">
 
 
 
@@ -141,7 +147,7 @@
   };
 </script>
 
-  <title>JS正则表达式的分组匹配 | 西风瘦码</title>
+  <title>我理解的函数防抖和节流 | 西风瘦码</title>
   
 
 
@@ -358,7 +364,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wancheng7.github.io/post/41ca68e.html">
+    <link itemprop="mainEntityOfPage" href="http://wancheng7.github.io/post/5e6ffd2b.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="万成">
@@ -375,7 +381,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS正则表达式的分组匹配</h1>
+          <h1 class="post-title" itemprop="name headline">我理解的函数防抖和节流</h1>
         
 
         <div class="post-meta">
@@ -387,7 +393,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-22T10:42:49+08:00">2018-04-22</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-22T20:43:05+08:00">2019-07-22</time>
             
 
             
@@ -408,7 +414,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/性能优化/" itemprop="url" rel="index"><span itemprop="name">性能优化</span></a></span>
 
                 
                 
@@ -423,8 +429,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/post/41ca68e.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论：</span> <span class="post-comments-count gitment-comments-count" data-xid="/post/41ca68e.html" itemprop="commentsCount"></span>
+                <a href="/post/5e6ffd2b.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论：</span> <span class="post-comments-count gitment-comments-count" data-xid="/post/5e6ffd2b.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -452,69 +458,43 @@
       
 
       
-        <h4 id="什么是分组"><a href="#什么是分组" class="headerlink" title="什么是分组"></a>什么是分组</h4><p>通俗来说，我理解的分组就是在正则表达式中用（）包起来的内容代表了一个分组，像这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var reg = /(\d&#123;2&#125;)/</span><br><span class="line">reg.test(&apos;12&apos;);  //true</span><br></pre></td></tr></table></figure></p>
-<p>这里reg中的(/d{2})就表示一个分组，匹配两位数字</p>
+        <h3 id="防抖（debounce）"><a href="#防抖（debounce）" class="headerlink" title="防抖（debounce）"></a>防抖（debounce）</h3><blockquote>
+<p>概念：防抖（在事件被触发n秒之后再执行回调函数，如果在这n秒内又被触发，则重新计时）</p>
+</blockquote>
 <a id="more"></a>
-<h4 id="分组内容的的形式"><a href="#分组内容的的形式" class="headerlink" title="分组内容的的形式"></a>分组内容的的形式</h4><p>一个分组中可以像上面这样有一个具体的表达式，这样可以优雅地表达一个重复的字符串<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/hahaha/</span><br><span class="line">/(ha)&#123;3&#125;/</span><br></pre></td></tr></table></figure></p>
-<p>这两个表达式是等效的，但有了分组之后可以更急简洁。</p>
-<p>体格分组中还可以有多个候选表达式，例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var reg = /I come from (hunan|hubei|zhejiang)/;</span><br><span class="line">reg.test(&apos;I come from hunan&apos;);   //true</span><br><span class="line">reg.test(&apos;I come from hubei&apos;);   //true</span><br></pre></td></tr></table></figure></p>
-<p>也就是说在这个分组中，通过|隔开的几个候选表达式是并列的关系，所以可以把这个|理解为或的意思</p>
-<h4 id="分组的分类"><a href="#分组的分类" class="headerlink" title="分组的分类"></a>分组的分类</h4><p>分组有四种类型</p>
-<ul>
-<li>捕获型      ()</li>
-<li>非捕获型    (?:)</li>
-<li>正向前瞻型  (?=)</li>
-<li>反向前瞻型  (?!)<br>我们使用的比较多的都是捕获型分组，只有这种分组才会暂存匹配到的串</li>
-</ul>
-<h4 id="分组的应用"><a href="#分组的应用" class="headerlink" title="分组的应用"></a>分组的应用</h4><p>分组在正则中还算使用的比较广泛的，我们常用的是捕获型分组</p>
-<ul>
-<li><p>捕获与引用</p>
-<ul>
-<li>被正则表达式捕获(匹配)到的字符串会被暂存起来，其中，由分组捕获到的字符串会从1开始编号，于是我们可以引用这些字符串：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var reg = /(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/;</span><br><span class="line">var dateStr = &apos;2018-04-18&apos;;</span><br><span class="line">reg.test(dateStr);  //true</span><br><span class="line">RegExp.$1   //2018</span><br><span class="line">RegExp.$2   //04</span><br><span class="line">RegExp.$3   //18</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>结合replace方法做字符串自定义替换</p>
-<ul>
-<li>String.prototype.replace方法的传参中可以直接引用被捕获的串，比如我们想开发中常见的日期格式替换,例如后台给你返回了一个2018/04/18,让你用正则替换为2018-04-18，就可以利用分组<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var dateStr = &apos;2018/04/18&apos;;</span><br><span class="line">var reg = /(\d&#123;4&#125;)\/(\d&#123;2&#125;)\/(\d&#123;2&#125;)/;</span><br><span class="line">dateStr = dateStr.replace(reg, &apos;$1-$2-$3&apos;) //&quot;2018-04-18&quot;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>不过这里需要注意的是/是需要用\转义的</p>
-</li>
-<li><p>反向引用</p>
-<ul>
-<li><p>正则表达式里也能进行引用，这称为反向引用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var reg = /(\w&#123;3&#125;) is \1/</span><br><span class="line">reg.test(&apos;kid is kid&apos;) // true</span><br><span class="line">reg.test(&apos;dik is dik&apos;) // true</span><br><span class="line">reg.test(&apos;kid is dik&apos;) // false</span><br><span class="line">reg.test(&apos;dik is kid&apos;) // false</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>需要注意的是，如果引用了越界或者不存在的编号的话，就被被解析为普通的表达式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var reg = /(\w&#123;3&#125;) is \6/;</span><br><span class="line">reg.test( &apos;kid is kid&apos; ); // false</span><br><span class="line">reg.test( &apos;kid is \6&apos; );  // true</span><br></pre></td></tr></table></figure>
-</li>
+<p>我们以一个输入框的<code>keyup</code>事件为例，先看一个没有防抖的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;span&gt;没有防抖的input：&lt;/span&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; id=&quot;inputA&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    //模拟一段ajax请求</span><br><span class="line">    function ajax(content)&#123;</span><br><span class="line">      console.log(&apos;ajax request&apos; + content);</span><br><span class="line">    &#125;</span><br><span class="line">    let inputA = document.querySelector(&apos;#inputA&apos;);</span><br><span class="line">    inputA.addEventListener(&apos;keyup&apos;, function(e)&#123;</span><br><span class="line">      ajax(e.target.value);</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>当我们不停输入时，运行结果如下：<br><img src="https://raw.githubusercontent.com/wanCheng7/wancheng7.github.io/master/images/blog/noDebounce.gif" alt="image"></p>
+<p>按照上面的的概念，我们先试着实现一个简单版本的防抖：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;span&gt;防抖后的input：&lt;/span&gt;</span><br><span class="line">  &lt;input type=&quot;text&quot; id=&quot;inputB&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    // 防抖初始版本</span><br><span class="line">    function debounceFn1(func, wait) &#123;</span><br><span class="line">      let timer = null;</span><br><span class="line">      return (...args) =&gt; &#123;</span><br><span class="line">        timer &amp;&amp; clearTimeout(timer);</span><br><span class="line">        timer = setTimeout( () =&gt; &#123;</span><br><span class="line">          func.apply(this, args);</span><br><span class="line">        &#125;, wait);</span><br><span class="line">      &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    let inputB = document.querySelector(&apos;#inputB&apos;);</span><br><span class="line">    let debounceAjax = debounceFn1(ajax, 500);</span><br><span class="line">    inputB.addEventListener(&apos;keyup&apos;, function(e)&#123;</span><br><span class="line">      debounceAjax(e.target.value);</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>当我们不停输入时，运行结果如下：<br><img src="https://raw.githubusercontent.com/wanCheng7/wancheng7.github.io/master/images/blog/debounce_1.gif" alt="image"></p>
+<p>观察打印的结果发现，当我们快速输入时并不会不停发出请求了，嗯，不错不错，基本功能是实现了，可是这种方式并不会马上运行我们的请求代码，如果我们需要马上运行一次再防抖呢，那就加个参数吧，哈哈，上代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 增加立即执行的防抖版本</span><br><span class="line">function debounceFn2(func, wait, immediate) &#123;</span><br><span class="line">  let timer = null;</span><br><span class="line">  return (...args) =&gt; &#123;</span><br><span class="line">    timer &amp;&amp; clearTimeout(timer);</span><br><span class="line">    //要实现只有首次立即执行的关键是变量timer，它是闭包中引用的一个变量，是不会被马上销毁的</span><br><span class="line">    //所以timer只有在初始化时是null，之后是一直有值的，存的是定时器的ID</span><br><span class="line">    if(immediate &amp;&amp; !timer) &#123;</span><br><span class="line">      func.apply(this, args);</span><br><span class="line">    &#125;</span><br><span class="line">    timer = setTimeout( () =&gt; &#123;</span><br><span class="line">      func.apply(self, args);</span><br><span class="line">    &#125;, wait);</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line">let debounceAjax = debounceFn2(ajax, 500, true);</span><br><span class="line">inputB.addEventListener(&apos;keyup&apos;, function(e)&#123;</span><br><span class="line">  debounceAjax(e.target.value);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>当快速输入值时，运行结果如下：<br><img src="https://raw.githubusercontent.com/wanCheng7/wancheng7.github.io/master/images/blog/debounce_2.gif" alt="image"></p>
+<p>好了，一个能应付日常有防抖需求的函数基本上写好了，如果还需要更多功能可以参考<code>underscore</code>是如何实现<code>debounce</code>的，由于我还没用过，有使用心得了下次再总结。</p>
+<h3 id="节流（throttle）"><a href="#节流（throttle）" class="headerlink" title="节流（throttle）"></a>节流（throttle）</h3><blockquote>
+<p>概念：在一个单位时间内，只能触发一次函数，如果在这个时间段内触发了多次，只有一次能生效。</p>
+</blockquote>
+<p>节流又分为两种实现方式，分别为有时间戳和计时器，下面先看一个用时间戳实现的栗子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;span&gt;节流后的input：&lt;/span&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; id=&quot;inputC&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    // 函数节流（时间戳版本）</span><br><span class="line">    function throttleFn1(func, wait) &#123;</span><br><span class="line">      // 上一次执行的时间</span><br><span class="line">      let previous = 0;</span><br><span class="line">      return (...args) =&gt; &#123;</span><br><span class="line">        // 当次执行的时间</span><br><span class="line">        let now = +new Date();</span><br><span class="line">        if(now - previous &gt; wait) &#123;</span><br><span class="line">          previous = now;</span><br><span class="line">          func.apply(this, args);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    let throttleAjax = throttleFn1(ajax, 1000);</span><br><span class="line">    inputC.addEventListener(&apos;keyup&apos;, function(e)&#123;</span><br><span class="line">      throttleAjax(e.target.value);</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这种方法实现节流的核心是两次函数执行的时间差大于等待时间时才执行回调函数，同时将这个执行的时间设为对比时间，这样就保证了再等待时间间隔内永远只会执行一次回调函数。当快速输入数字时，上面代码执行结果如下：<br><img src="https://raw.githubusercontent.com/wanCheng7/wancheng7.github.io/master/images/blog/throttle_1.gif" alt="image"></p>
+<p>另一种实现节流的方法就是类似于防抖那样利用定时器实现，这个定时器的所定时长就是这个等待值。实现代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 节流版本（定时器版本）</span><br><span class="line">function throttleFn2(func, wait) &#123;</span><br><span class="line">  let timer = null;</span><br><span class="line">  return (...args) =&gt; &#123;</span><br><span class="line">    if(!timer) &#123;</span><br><span class="line">      timer = setTimeout(() =&gt; &#123;</span><br><span class="line">        func.apply(this, args);</span><br><span class="line">        timer = null;</span><br><span class="line">      &#125;, wait);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">let throttleAjax = throttleFn2(ajax, 1000);</span><br><span class="line">inputC.addEventListener(&apos;keyup&apos;, function(e)&#123;</span><br><span class="line">  throttleAjax(e.target.value);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>当快速输入时，运行结果如下：<br><img src="https://raw.githubusercontent.com/wanCheng7/wancheng7.github.io/master/images/blog/throttle_2.gif" alt="image"></p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
+<li>关于防抖<ul>
+<li>典型的应用场景就上上面例子中的搜索关键词联想查询，我们肯定不希望每次输入都去搜索，所以设置一个间隔时间来防抖可以减少一些无效请求。</li>
+<li>调整窗口大小触发的<code>resize</code>事件，如果等待时间设置合理并且 调整的快的话可以做到只触发一次回调事件。</li>
 </ul>
 </li>
-<li><p>非捕获型分组</p>
-<ul>
-<li>有的时候只是为了分组并不需要捕获的情况下就可以使用非捕获型分组，例如<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var reg = /(?:\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/</span><br><span class="line">var date = &apos;2012-12-21&apos;</span><br><span class="line">reg.test(date)</span><br><span class="line">RegExp.$1 // 12</span><br><span class="line">RegExp.$2 // 21</span><br></pre></td></tr></table></figure>
-</li>
+<li>关于节流<ul>
+<li>监听浏览器的滚动条事件时，我们需要周期性地判断滚动条高度但又不想那么频繁就可以用节流</li>
 </ul>
 </li>
-<li><p>正向与反向前瞻型分组</p>
-<ul>
-<li><p>正向前瞻型分组：你站在原地往前看，如果前方是指定的东西就返回true，否则为false</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var reg = /kid is a (?=doubi)/</span><br><span class="line">reg.test(&apos;kid is a doubi&apos;) // true</span><br><span class="line">reg.test(&apos;kid is a shabi&apos;) // false</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>反向前瞻型分组：你站在原地往前看，如果前方不是指定的东西则返回true，如果是则返回false</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var reg = /kid is a (?!doubi)/</span><br><span class="line">reg.test(&apos;kid is a doubi&apos;) // false</span><br><span class="line">reg.test(&apos;kid is a shabi&apos;) // true</span><br></pre></td></tr></table></figure>
-</li>
 </ul>
-</li>
-<li><p>既然前瞻型分组和非捕获型分组都不会捕获，那他们有什么区别呢？先看例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var reg, str = &quot;kid is a doubi&quot;;</span><br><span class="line">reg = /(kid is a (?:doubi))/</span><br><span class="line">reg.test(str)</span><br><span class="line">RegExp.$1 // kid is a doubi</span><br><span class="line"></span><br><span class="line">reg = /(kid is a (?=doubi))/</span><br><span class="line">reg.test(str)</span><br><span class="line">RegExp.$1 // kis is a</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>也就是说非捕获型分组匹配到的字符串任然会被外层分组匹配到，而前瞻型不会，所以如果你希望在外层分组中不匹配里面分组的值的话就可以使用前瞻型分组了。</p>
-<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><ul>
-<li><a href="http://www.jb51.net/article/79309.htm" target="_blank" rel="noopener">JavaScript正则表达式的分组匹配详解</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank" rel="noopener">正则表达式</a></li>
+<h3 id="小节"><a href="#小节" class="headerlink" title="小节"></a>小节</h3><p>函数的防抖和节流，出现的目的是为了提高代码性能，因为减少了不必要的请求和浏览器资源消耗（比如重绘和回流），算是性能优化的一种方式。</p>
+<p>归根到底，防抖和节流是利用了函数的闭包缓存了状态值变量，从而可以对频繁的调用函数根据一定的规则做过滤。以上就是我个人看了一些大佬的文章之后做的总结，代码都是一点一点手打了之后验证过的，感兴趣的童鞋可以复制之后验证一下，当然有理解不足之处欢迎留言指出！</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="https://github.com/yygmind/blog/issues/39" target="_blank" rel="noopener">【进阶 6-4 期】深入浅出防抖函数</a></li>
+<li><a href="https://juejin.im/post/5b8de829f265da43623c4261#heading-10" target="_blank" rel="noopener">7分钟理解JS的节流、防抖及使用场景</a></li>
+<li><a href="https://github.com/mqyqingfeng/Blog/issues/22" target="_blank" rel="noopener">JavaScript专题之跟着underscore学防抖</a></li>
+<li><a href="https://juejin.im/post/5b651dc15188251aa30c8669#heading-0" target="_blank" rel="noopener">函数防抖和节流</a></li>
+<li><a href="https://juejin.im/post/5c87b54ce51d455f7943dddb" target="_blank" rel="noopener">2019 面试准备 - JS 防抖与节流</a></li>
 </ul>
 
       
@@ -536,7 +516,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/正则/" rel="tag"># 正则</a>
+            <a href="/tags/性能优化/" rel="tag"># 性能优化</a>
           
         </div>
       
@@ -549,8 +529,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/c080eeb1.html" rel="next" title="探究JS中的连等赋值问题">
-                <i class="fa fa-chevron-left"></i> 探究JS中的连等赋值问题
+              <a href="/post/253fca25.html" rel="next" title="在React中实现点击空白区域关闭指定元素的实现">
+                <i class="fa fa-chevron-left"></i> 在React中实现点击空白区域关闭指定元素的实现
               </a>
             
           </div>
@@ -558,10 +538,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/post/f3fa0421.html" rel="prev" title="《免费前端教程不会告诉你这些》知乎LIVE读后感">
-                《免费前端教程不会告诉你这些》知乎LIVE读后感 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -798,7 +774,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是分组"><span class="nav-number">1.</span> <span class="nav-text">什么是分组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分组内容的的形式"><span class="nav-number">2.</span> <span class="nav-text">分组内容的的形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分组的分类"><span class="nav-number">3.</span> <span class="nav-text">分组的分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分组的应用"><span class="nav-number">4.</span> <span class="nav-text">分组的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考文章"><span class="nav-number">5.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#防抖（debounce）"><span class="nav-number">1.</span> <span class="nav-text">防抖（debounce）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节流（throttle）"><span class="nav-number">2.</span> <span class="nav-text">节流（throttle）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用场景"><span class="nav-number">3.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小节"><span class="nav-number">4.</span> <span class="nav-text">小节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
