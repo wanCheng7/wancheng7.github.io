@@ -15,6 +15,7 @@
 
 ### 页面性能优化
 - [从输入URL到页面加载发生了什么](https://wancheng7.github.io/post/e277deca.html)
+- [我理解的函数防抖和节流](https://github.com/wanCheng7/wancheng7.github.io/issues/14)
 
 ### ES6
 - [ES6学习笔记（一）——扩展运算符和解构赋值](https://wancheng7.github.io/post/59cf2dea.html)
@@ -26,6 +27,7 @@
 ### React
 - [React生命周期简单梳理](https://wancheng7.github.io/post/33cf40df.html)
 - [create-react-app v3中配置按需加载组件和添加less支持修改主题样式](https://wancheng7.github.io/post/e0c50683.html)
+- [在React中实现点击空白区域关闭指定元素的实现](https://github.com/wanCheng7/wancheng7.github.io/issues/15)
 
 ### Vue
 - [浅析使用vue-router实现前端路由的两种方式](https://wancheng7.github.io/post/2f3d2375.html)
