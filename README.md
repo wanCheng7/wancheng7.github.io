@@ -21,8 +21,9 @@
 - [ES6学习笔记（一）——扩展运算符和解构赋值](https://wancheng7.github.io/post/59cf2dea.html)
 - [ES6学习笔记（二）—— 通过ES6 Module看import和require区别](https://wancheng7.github.io/post/594701d3.html)
 
-### CSS
+### CSS && 动画 
 - [CSS3动画和JS动画的比较](https://wancheng7.github.io/post/6707751a.html)
+- [利用SVG实现表示百分比的圆环](https://github.com/wanCheng7/wancheng7.github.io/issues/18)
 
 ### React
 - [React生命周期简单梳理](https://wancheng7.github.io/post/33cf40df.html)
