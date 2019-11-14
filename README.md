@@ -5,6 +5,8 @@
 - [博客园](http://www.cnblogs.com/wancheng7)(博客园排版是在惨不忍睹，以后就在上面两个更新了)
 
 ## 博客链接
+### 日常记录
+- [日常踩坑记录](https://github.com/wanCheng7/wancheng7.github.io/issues/16)
 ### JavaScript
 - [我所理解的event loop](https://wancheng7.github.io/post/5d54f45f.html)
 - [JS种正则表达式的基础用法](https://wancheng7.github.io/post/10937cb.html)
